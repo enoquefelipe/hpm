@@ -1,7 +1,7 @@
 
 import com.mycompany.dao.PessoaDao;
-import com.mycompany.entity.Pessoa;
-import com.mycompany.entity.Ticket;
+import com.mycompany.entities.Pessoa;
+import com.mycompany.entities.Ticket;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

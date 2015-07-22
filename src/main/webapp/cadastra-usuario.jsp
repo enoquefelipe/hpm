@@ -90,6 +90,17 @@
                     <label for="password">Senha</label>
                     <input type="password" class="form-control" id="password" name="usuario.senha" placeholder="Senha..." title="Digite aqui os de senha!!">
                 </div>
+
+
+                <div class="form-group">
+                    <label for="password">Nível de Acesso</label>
+                    <select class="form-control" name="usuario.nivel" title="Escolha o nível de acesso para o usuário!!!">
+                        <option>Administrador</option>
+                        <option>Técnico</option>
+                        <option>Usuário</option>
+                    </select>
+                </div>
+
             </div>
         </div>
 

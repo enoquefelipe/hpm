@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/bootstrap-theme.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  
+
     </head>
     <body>
         <div>
@@ -42,6 +42,15 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="cadastra-usuario.jsp">Usuário</a></li>
                                     <li><a href="cadastra-empresa.jsp">Empresa</a></li>
+                                    <li><a href="cadastra-oficina.jsp">Oficina</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Consultas<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="listaChamados.action">Consultar Chamado</a></li>
+                                    <li><a href="listaOficinas.action">Oficinas</a></li>
                                 </ul>
                             </li>
 

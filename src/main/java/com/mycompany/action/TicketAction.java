@@ -1,7 +1,7 @@
 package com.mycompany.action;
 
 import com.mycompany.dao.TicketDao;
-import com.mycompany.entity.Ticket;
+import com.mycompany.entities.Ticket;
 import com.opensymphony.xwork2.ActionContext;
 import java.util.ArrayList;
 import java.util.List;

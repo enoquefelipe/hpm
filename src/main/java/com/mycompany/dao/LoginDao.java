@@ -1,6 +1,6 @@
 package com.mycompany.dao;
 
-import com.mycompany.entity.Usuario;
+import com.mycompany.entities.Usuario;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

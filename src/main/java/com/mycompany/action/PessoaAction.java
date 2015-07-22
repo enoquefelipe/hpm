@@ -1,10 +1,10 @@
 package com.mycompany.action;
 
 import com.mycompany.dao.PessoaDao;
-import com.mycompany.entity.Contato;
-import com.mycompany.entity.Endereco;
-import com.mycompany.entity.Pessoa;
-import com.mycompany.entity.Usuario;
+import com.mycompany.entities.Contato;
+import com.mycompany.entities.Endereco;
+import com.mycompany.entities.Pessoa;
+import com.mycompany.entities.Usuario;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 
@@ -12,7 +12,7 @@ import org.apache.struts2.convention.annotation.Result;
  *
  * @author Administrador
  */
-public class PeopleAction {
+public class PessoaAction {
 
     private Pessoa pessoa = new Pessoa();
     private Usuario usuario = new Usuario();

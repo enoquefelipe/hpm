@@ -1,7 +1,7 @@
 package com.mycompany.action;
 
 import com.mycompany.dao.PessoaDao;
-import com.mycompany.entity.Pessoa;
+import com.mycompany.entities.Pessoa;
 import java.sql.SQLException;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;

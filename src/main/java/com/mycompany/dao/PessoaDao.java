@@ -1,7 +1,7 @@
 
 package com.mycompany.dao;
 
-import com.mycompany.entity.Pessoa;
+import com.mycompany.entities.Pessoa;
 import com.mycompany.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

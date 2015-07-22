@@ -6,7 +6,7 @@
 package com.mycompany.action;
 
 import com.mycompany.dao.TicketDao;
-import com.mycompany.entity.Ticket;
+import com.mycompany.entities.Ticket;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 

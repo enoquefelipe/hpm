@@ -1,7 +1,7 @@
 package com.mycompany.action;
 
 import com.mycompany.dao.UsuarioDao;
-import com.mycompany.entity.Usuario;
+import com.mycompany.entities.Usuario;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 
@@ -9,7 +9,7 @@ import org.apache.struts2.convention.annotation.Result;
  *
  * @author Administrador
  */
-public class UserAction {
+public class UsuarioAction {
 
     private Usuario user = new Usuario();
     private String message;

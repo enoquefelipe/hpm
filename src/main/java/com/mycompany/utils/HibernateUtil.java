@@ -1,12 +1,13 @@
 package com.mycompany.utils;
 
-import com.mycompany.entity.Contato;
-import com.mycompany.entity.Departamento;
-import com.mycompany.entity.Empresa;
-import com.mycompany.entity.Endereco;
-import com.mycompany.entity.Pessoa;
-import com.mycompany.entity.Ticket;
-import com.mycompany.entity.Usuario;
+import com.mycompany.entities.Contato;
+import com.mycompany.entities.Departamento;
+import com.mycompany.entities.Empresa;
+import com.mycompany.entities.Endereco;
+import com.mycompany.entities.Oficina;
+import com.mycompany.entities.Pessoa;
+import com.mycompany.entities.Ticket;
+import com.mycompany.entities.Usuario;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
@@ -28,6 +29,7 @@ public class HibernateUtil {
                 ac.addAnnotatedClass(Endereco.class);
                 ac.addAnnotatedClass(Empresa.class);
                 ac.addAnnotatedClass(Departamento.class);
+                ac.addAnnotatedClass(Oficina.class);
                 sessionFactory = ac.configure().buildSessionFactory();
             } catch (Throwable ex) {
                 System.err.println("Initial SessionFactory creation failed." + ex);

@@ -5,8 +5,6 @@ import java.util.Map;
 import com.opensymphony.xwork2.ActionSupport;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
-//import org.apache.struts2.convention.annotation.Action;
-//import org.apache.struts2.convention.annotation.Result;
 
 @SuppressWarnings("serial")
 public class LoginAction extends ActionSupport {
@@ -18,7 +16,7 @@ public class LoginAction extends ActionSupport {
 
     static {
         LoginAction.mapa.put("enoque.leal", "1234");
-        LoginAction.mapa.put("k19", "k19");
+        LoginAction.mapa.put("admin", "1234");
     }
 
     @Override
