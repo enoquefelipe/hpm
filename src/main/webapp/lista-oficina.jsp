@@ -5,12 +5,12 @@
 
     <div>
 
-        <form class="form-inline">
+        <form class="form-inline" method="POST" action="pesquisarOficina">
             <div style="text-align: right">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Pesquisar...">
+                    <input type="text" name="oficina.descricao" class="form-control" placeholder="Pesquisar...">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
+                        <button class="btn btn-default" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </span>
@@ -33,11 +33,11 @@
 
                         <tr>
                             <td class="tabela-chamados"> <s:property value="sigla" />  </td>
-                            <td class="tabela-chamados"> <s:property value="nome" />  </td>
+                            <td class=""> <s:property value="nome" />  </td>
                             <td class="tabela-chamados"> <s:property value="status" /> </td>
 
                             <td class="tabela-chamados"> 
-                                <s:url id="editURL" action="selecionaOficina">
+                                <s:url id="editURL" action="detalhesOficina">
                                     <s:param name="id" value="%{id}"></s:param>
                                 </s:url>
                                 <s:a href="%{editURL}" cssClass="glyphicon glyphicon-zoom-in zoom" ></s:a>

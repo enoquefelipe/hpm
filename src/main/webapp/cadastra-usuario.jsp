@@ -1,6 +1,5 @@
 <%@taglib uri="/struts-tags" prefix="s"%>
 <jsp:include page="inc/header.jsp"/>
-
 <section>
 
     <div class="alert alert-success" role="alert" id="message-sucesso"><s:property value="message" /></div>
@@ -27,8 +26,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="nascimento">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="nascimento" name="pessoa.nascimento" placeholder="Data de Nascimento...">
+                    <label for="datepicker">Data de Nascimento</label>
+                    <input type="text" class="form-control" id="datepicker" name="data" placeholder="Data de Nascimento...">
                 </div>
             </div>
             <h3>Dados de Contato</h3>

@@ -50,7 +50,6 @@ public class TicketAction {
         } else {
             return "success";
         }
-
     }
 
     @Action(value = "selecionaChamado", results = {
