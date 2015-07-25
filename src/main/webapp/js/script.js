@@ -4,7 +4,7 @@
 
 $(function() {
     $("#accordion").accordion();
-    
+
     $("#datepicker").datepicker({
         language: "pt-BR",
         dateFormat: 'dd-mm-yy'

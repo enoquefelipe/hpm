@@ -54,6 +54,7 @@ public class OficinaDao {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria crit = session.createCriteria(Oficina.class);
 
+        System.out.println(descricao);
 //      crit.add(Restrictions.like("nome", descricao + "%"));
         Criterion sigla = Restrictions.ilike("sigla", descricao + "%");
         Criterion nome = Restrictions.like("nome", descricao + "%");

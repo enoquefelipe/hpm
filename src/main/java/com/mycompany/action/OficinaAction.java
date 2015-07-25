@@ -3,6 +3,7 @@ package com.mycompany.action;
 import com.mycompany.dao.OficinaDao;
 import com.mycompany.entities.Oficina;
 import com.opensymphony.xwork2.ActionContext;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -21,8 +22,6 @@ public class OficinaAction {
     private String message;
     private OficinaDao dao = new OficinaDao();
 
-
-
     @Action(value = "addOficina", results
             = @Result(name = "success", location = "/cadastra-oficina.jsp"))
     public String addOficina() {
@@ -32,7 +31,7 @@ public class OficinaAction {
     }
 
     @Action(value = "listaOficinas", results = {
-        @Result(name = "success", location = "/lista-oficina.jsp"),
+        @Result(name = "success", location = "/lista-oficina-ajax-result.jsp"),
         @Result(name = "error", location = "/lista-oficina.jsp")
     })
     public String listaOficinas() {
@@ -77,7 +76,7 @@ public class OficinaAction {
         @Result(name = "success", location = "/lista-oficina.jsp"),
         @Result(name = "error", location = "/Home.jsp")
     })
-    public String pesquisarOficina() {
+    public String pesquisarOficina() throws UnsupportedEncodingException {
         listaoficinas = dao.pesquisar(oficina.getDescricao());
         if (listaoficinas.isEmpty()) {
             setMessage("Nenhum registro encontado!");
