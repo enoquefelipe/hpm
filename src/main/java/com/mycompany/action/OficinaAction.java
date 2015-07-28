@@ -31,7 +31,7 @@ public class OficinaAction {
     }
 
     @Action(value = "listaOficinas", results = {
-        @Result(name = "success", location = "/lista-oficina-ajax-result.jsp"),
+        @Result(name = "success", location = "/lista-oficina.jsp"),
         @Result(name = "error", location = "/lista-oficina.jsp")
     })
     public String listaOficinas() {
@@ -73,7 +73,7 @@ public class OficinaAction {
     }
 
     @Action(value = "pesquisarOficina", results = {
-        @Result(name = "success", location = "/lista-oficina.jsp"),
+        @Result(name = "success", location = "/lista-oficina-ajax-result.jsp"),
         @Result(name = "error", location = "/Home.jsp")
     })
     public String pesquisarOficina() throws UnsupportedEncodingException {

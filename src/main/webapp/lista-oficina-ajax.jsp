@@ -12,11 +12,11 @@
         <script type="text/javascript">
             $('document').ready(function() {
                 $('#buscar').click(function() {
-                    $.post("listaOficinas", {
+                    $.get("pesquisarOficina", {
                         'oficina.descricao': $("#des").val()
                     },
                     function(result) {
-                        $('#div1').append(result);
+                        $('#div1').html(result);
                     });
                 });
             });

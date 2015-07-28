@@ -3,6 +3,7 @@ package com.mycompany.dao;
 import com.mycompany.entities.Oficina;
 import com.mycompany.utils.HibernateUtil;
 import java.util.List;
+import javax.swing.JOptionPane;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -54,7 +55,6 @@ public class OficinaDao {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria crit = session.createCriteria(Oficina.class);
 
-        System.out.println(descricao);
 //      crit.add(Restrictions.like("nome", descricao + "%"));
         Criterion sigla = Restrictions.ilike("sigla", descricao + "%");
         Criterion nome = Restrictions.like("nome", descricao + "%");

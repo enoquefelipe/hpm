@@ -38,7 +38,7 @@
     <body>      
 
         <form action="Login" method="POST" class="form-login">
-            <h2 id="titulo-login"> XPTó </h2>
+            <h2 id="titulo-login"> HPM </h2>
             <div class="form-group">
                 <div class="input-group">
 
