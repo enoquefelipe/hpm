@@ -48,7 +48,7 @@
                 <div class="form-group">
                     <label for="">CEP</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="">
+                        <input type="text" class="form-control" placeholder="" data-mask="99999-999">
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button">
                                 <span class="glyphicon glyphicon-search"></span>
@@ -87,17 +87,17 @@
             <div class="panel-body">
                 <div class="form-group">
                     <label for="">Telefone Fixo</label>
-                    <input type="text" class="form-control" id="" name="" placeholder="">
+                    <input type="text" class="form-control" id="" name="" placeholder="" data-mask="99 9999-9999">
                 </div>
 
                 <div class="form-group">
                     <label for="">Telefone Celular</label>
-                    <input type="text" class="form-control" id="" name="" placeholder="">
+                    <input type="text" class="form-control" id="" name="" placeholder="" data-mask="99 99999-9999">
                 </div>
 
                 <div class="form-group">
                     <label for="">E-mail</label>
-                    <input type="text" class="form-control" id="" name="" placeholder="">
+                    <input type="email" class="form-control" id="" name="" placeholder="">
                 </div>
 
                 <div class="form-group">
