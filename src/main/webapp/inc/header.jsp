@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>XPTó</title>
+        <title>HPM</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-theme.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/jquery-ui.css">
-  
+        <meta name="viewport" content="width=device-width">
     </head>
     <body>
         <div>

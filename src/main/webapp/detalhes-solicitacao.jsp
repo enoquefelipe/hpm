@@ -66,13 +66,7 @@
             </form>
         </div>
 
-        <div class="col-md-2">
-            <hr>
-            <form action="teste" method="POST">
-                <p>&nbsp;</p>
-                <button type="submit" class="btn btn-default">Cadastro Teste</button>
-            </form>
-        </div>
+        <div class="col-md-2"></div>
 
     </div>
 </section>
