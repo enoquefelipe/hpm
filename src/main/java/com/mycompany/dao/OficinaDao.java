@@ -3,7 +3,6 @@ package com.mycompany.dao;
 import com.mycompany.entities.Oficina;
 import com.mycompany.utils.HibernateUtil;
 import java.util.List;
-import javax.swing.JOptionPane;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

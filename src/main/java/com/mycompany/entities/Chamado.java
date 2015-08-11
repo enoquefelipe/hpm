@@ -15,7 +15,7 @@ import javax.persistence.Temporal;
  */
 @Entity
 @Table(name = "hpm_chamados")
-public class Ticket implements Serializable {
+public class Chamado implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

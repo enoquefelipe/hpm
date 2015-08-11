@@ -12,59 +12,43 @@ import javax.persistence.Table;
  * @author Administrador
  */
 @Entity
-@Table(name = "hpm_oficinas")
-public class Oficina implements Serializable {
+@Table(name = "hpm_setores")
+public class Setor implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String nome, sigla, descricao, status;
+    private String sigla, nome, descricao;
 
-    @Override
-    public String toString() {
-        return nome;
-    }
-
-    
-    // Getters
     public int getId() {
         return id;
-    }
-
-    public String getNome() {
-        return nome;
     }
 
     public String getSigla() {
         return sigla;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public String getDescricao() {
         return descricao;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    //Setters
     public void setId(int id) {
         this.id = id;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public void setSigla(String sigla) {
         this.sigla = sigla;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }

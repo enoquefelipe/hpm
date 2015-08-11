@@ -1,9 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : 05/07/2015, 11:13:09
-    Author     : Administrador
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
@@ -143,7 +137,7 @@
 
                             </div>
                             <div class="foot">
-                                <button class="btn btn-default" data-dismiss="modal" type="submit">Log me in</button>
+                                <button class="btn btn-default" data-dismiss="modal" type="submit">Entrar</button>
                             </div>
                         </form>
                     </div>

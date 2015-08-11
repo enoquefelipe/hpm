@@ -12,6 +12,10 @@
         </action>
         <action name="Logout" class="com.mycompany.action.LogoutAction" >
             <result name="success">/Login.jsp</result>
-        </action>      
+        </action>    
+        
+        <action name="ajaxdemo" class="com.mycompany.action.AjaxAutocomplete">
+            <result name="success" >/teste.jsp</result>
+        </action>  
     </package>
 </struts>

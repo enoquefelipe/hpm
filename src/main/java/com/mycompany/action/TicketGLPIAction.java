@@ -5,8 +5,8 @@
  */
 package com.mycompany.action;
 
-import com.mycompany.dao.TicketDao;
-import com.mycompany.entities.Ticket;
+import com.mycompany.dao.ChamadoDao;
+import com.mycompany.entities.Chamado;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 
@@ -16,7 +16,7 @@ import org.apache.struts2.convention.annotation.Result;
  */
 public class TicketGLPIAction {
 //
-//    private Ticket ticket = new Ticket();
+//    private Chamado ticket = new Chamado();
 //    private String message;
 //
 //    // Action new ticket
@@ -28,7 +28,7 @@ public class TicketGLPIAction {
 //
 //    public String newTicket() {
 //        java.util.Date currentDate = new java.util.Date(System.currentTimeMillis());
-//////      ticket = new Ticket();
+//////      ticket = new Chamado();
 ////        ticket.setEntities_id(0);
 //////      ticket.setName("Chamado de Teste 03");
 ////        ticket.setName(this.ticket.getName());
@@ -65,13 +65,13 @@ public class TicketGLPIAction {
 ////        ticket.setLocations_id(0);
 ////        ticket.setValidation_percent(0);
 //
-//        TicketDao dao = new TicketDao();
+//        ChamadoDao dao = new ChamadoDao();
 //        dao.save(ticket);
 //        return "success";
 //    }
 //
 //    // Getters
-//    public Ticket getTicket() {
+//    public Chamado getTicket() {
 //        return ticket;
 //    }
 //
@@ -80,7 +80,7 @@ public class TicketGLPIAction {
 //    }
 //
 //    //Setters
-//    public void setTicket(Ticket ticket) {
+//    public void setTicket(Chamado ticket) {
 //        this.ticket = ticket;
 //    }
 //

@@ -1,7 +1,7 @@
 
 import com.mycompany.dao.PessoaDao;
 import com.mycompany.entities.Pessoa;
-import com.mycompany.entities.Ticket;
+import com.mycompany.entities.Chamado;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -37,7 +37,7 @@ public class Teste {
 //        transaction.commit();
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("hpm_tickets");
         EntityManager manager = factory.createEntityManager();
-        Ticket ticket = manager.find(Ticket.class, 1L);
+        Chamado ticket = manager.find(Chamado.class, 1L);
         System.out.println(ticket.getTitulo());
         manager.close();
     }

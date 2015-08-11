@@ -106,6 +106,20 @@ public class OficinaAction {
         dao.atualizar(oficina);
         return "success";
     }
+    
+        @Action(value = "listaOficinasDropdown", results = {
+        @Result(name = "success", location = "/cadastrar-ocorrencia.jsp"),
+        @Result(name = "error", location = "/cadastrar-ocorrencia.jsp")
+    })
+    public String listaOficinasDropdown() {
+        listaoficinas = dao.listar();
+        if (listaoficinas.isEmpty()) {
+            setMessage("Nenhum registro encontado!");
+            return "success";
+        } else {
+            return "success";
+        }
+    }
 
     // Getters
     public Oficina getOficina() {

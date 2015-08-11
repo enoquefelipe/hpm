@@ -1,7 +1,7 @@
 package com.mycompany.action;
 
-import com.mycompany.dao.TicketDao;
-import com.mycompany.entities.Ticket;
+import com.mycompany.dao.ChamadoDao;
+import com.mycompany.entities.Chamado;
 import com.opensymphony.xwork2.ActionContext;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +16,8 @@ import org.apache.struts2.convention.annotation.Result;
  */
 public class ChamadosAction {
 
-    private Ticket ticket = new Ticket();
-    private List<Ticket> listachamados = new ArrayList<>();
+    private Chamado ticket = new Chamado();
+    private List<Chamado> listachamados = new ArrayList<>();
     private String message;
     private int id;
 
@@ -30,7 +30,7 @@ public class ChamadosAction {
     public String novoChamado() {
         java.util.Date dataAtual = new java.util.Date(System.currentTimeMillis());
         ticket.setData_abertura(dataAtual);
-        TicketDao dao = new TicketDao();
+        ChamadoDao dao = new ChamadoDao();
         dao.salvar(ticket);
         id = ticket.getId();
         setMessage("Solicitação registrada com sucesso: ");
@@ -42,7 +42,7 @@ public class ChamadosAction {
         @Result(name = "error", location = "/Home.jsp")
     })
     public String listaChamados() {
-        TicketDao dao = new TicketDao();
+        ChamadoDao dao = new ChamadoDao();
         listachamados = dao.listar();
         if (listachamados.isEmpty()) {
             setMessage("Nenhum registro encontado!");
@@ -57,14 +57,14 @@ public class ChamadosAction {
         @Result(name = "error", location = "/Home.jsp")
     })
     public String selecionaChamado() {
-        TicketDao dao = new TicketDao();
+        ChamadoDao dao = new ChamadoDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
         ticket = dao.selecionar(Integer.parseInt(request.getParameter("id")));
         return "success";
     }
 
     // Getters
-    public Ticket getTicket() {
+    public Chamado getTicket() {
         return ticket;
     }
 
@@ -72,7 +72,7 @@ public class ChamadosAction {
         return message;
     }
 
-    public List<Ticket> getListachamados() {
+    public List<Chamado> getListachamados() {
         return listachamados;
     }
 
@@ -81,7 +81,7 @@ public class ChamadosAction {
     }
 
     //Setters
-    public void setTicket(Ticket ticket) {
+    public void setTicket(Chamado ticket) {
         this.ticket = ticket;
     }
 
@@ -89,7 +89,7 @@ public class ChamadosAction {
         this.message = message;
     }
 
-    public void setListachamados(List<Ticket> listachamados) {
+    public void setListachamados(List<Chamado> listachamados) {
         this.listachamados = listachamados;
     }
 

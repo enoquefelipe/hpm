@@ -1,6 +1,6 @@
 package com.mycompany.dao;
 
-import com.mycompany.entities.Ticket;
+import com.mycompany.entities.Chamado;
 import com.mycompany.utils.HibernateUtil;
 import java.util.List;
 import org.hibernate.Session;
@@ -10,9 +10,9 @@ import org.hibernate.Transaction;
  *
  * @author Administrador
  */
-public class TicketDao {
+public class ChamadoDao {
 
-    public int salvar(Ticket ticket) {
+    public int salvar(Chamado ticket) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
         session.save(ticket);
@@ -20,7 +20,7 @@ public class TicketDao {
         return ticket.getId();
     }
 
-    public List<Ticket> listar() {
+    public List<Chamado> listar() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from Ticket").list();
@@ -28,8 +28,8 @@ public class TicketDao {
         return lista;
     }
 
-    public Ticket selecionar(int id) {
+    public Chamado selecionar(int id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        return (Ticket) session.load(Ticket.class, id);
+        return (Chamado) session.load(Chamado.class, id);
     }
 }
