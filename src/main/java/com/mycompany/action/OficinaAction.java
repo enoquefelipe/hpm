@@ -44,6 +44,20 @@ public class OficinaAction {
         }
     }
 
+    @Action(value = "listaOficinasAjax", results = {
+        @Result(name = "success", location = "/lista-oficina-ajax.jsp"),
+        @Result(name = "error", location = "/lista-oficina-ajax.jsp")
+    })
+    public String listaOficinasAjax() {
+        listaoficinas = dao.listar();
+        if (listaoficinas.isEmpty()) {
+            setMessage("Nenhum registro encontado!");
+            return "success";
+        } else {
+            return "success";
+        }
+    }
+
     @Action(value = "detalhesOficina", results = {
         @Result(name = "success", location = "/detalhes-oficina.jsp"),
         @Result(name = "error", location = "/Home.jsp")

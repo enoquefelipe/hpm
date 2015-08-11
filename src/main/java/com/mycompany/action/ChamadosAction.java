@@ -14,7 +14,7 @@ import org.apache.struts2.convention.annotation.Result;
  *
  * @author Administrador
  */
-public class TicketAction {
+public class ChamadosAction {
 
     private Ticket ticket = new Ticket();
     private List<Ticket> listachamados = new ArrayList<>();

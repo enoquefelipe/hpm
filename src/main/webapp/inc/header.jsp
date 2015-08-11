@@ -51,6 +51,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="listaChamados.action">Consultar Chamado</a></li>
                                     <li><a href="listaOficinas.action">Oficinas</a></li>
+                                    <li><a href="listaOficinasAjax.action">Oficinas Ajax</a></li>
                                 </ul>
                             </li>
 

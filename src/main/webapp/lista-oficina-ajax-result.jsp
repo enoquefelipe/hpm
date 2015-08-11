@@ -1,5 +1,6 @@
 
 <%@taglib uri="/struts-tags" prefix="s"%>
+
 <s:form>
             <h4 class="tittle-page">Oficinas</h4>
             <table class="table table-striped">
@@ -38,4 +39,3 @@
     </div>
 
 </section>
-<jsp:include page="inc/footer.html"/>
