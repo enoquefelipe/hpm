@@ -14,14 +14,14 @@ import org.apache.struts2.convention.annotation.Result;
  *
  * @author Administrador
  */
-public class ChamadosAction {
+public class ChamadoAction {
 
-    private Chamado ticket = new Chamado();
+    private Chamado chamado = new Chamado();
     private List<Chamado> listachamados = new ArrayList<>();
     private String message;
     private int id;
 
-    // Action new ticket
+    // Action new chamado
     @Action(value = "novoChamado", results = {
         @Result(name = "success", location = "/cadastra-solicitacao.jsp"),
         @Result(name = "error", location = "/error.html")
@@ -29,10 +29,10 @@ public class ChamadosAction {
 
     public String novoChamado() {
         java.util.Date dataAtual = new java.util.Date(System.currentTimeMillis());
-        ticket.setData_abertura(dataAtual);
+        chamado.setData_abertura(dataAtual);
         ChamadoDao dao = new ChamadoDao();
-        dao.salvar(ticket);
-        id = ticket.getId();
+        dao.salvar(chamado);
+        id = chamado.getId();
         setMessage("Solicitação registrada com sucesso: ");
         return "success";
     }
@@ -59,13 +59,13 @@ public class ChamadosAction {
     public String selecionaChamado() {
         ChamadoDao dao = new ChamadoDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
-        ticket = dao.selecionar(Integer.parseInt(request.getParameter("id")));
+        chamado = dao.selecionar(Integer.parseInt(request.getParameter("id")));
         return "success";
     }
 
     // Getters
     public Chamado getTicket() {
-        return ticket;
+        return chamado;
     }
 
     public String getMessage() {
@@ -82,7 +82,7 @@ public class ChamadosAction {
 
     //Setters
     public void setTicket(Chamado ticket) {
-        this.ticket = ticket;
+        this.chamado = ticket;
     }
 
     public void setMessage(String message) {

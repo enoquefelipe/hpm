@@ -23,7 +23,7 @@ public class ChamadoDao {
     public List<Chamado> listar() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        List lista = session.createQuery("from Ticket").list();
+        List lista = session.createQuery("from Chamado").list();
         t.commit();
         return lista;
     }

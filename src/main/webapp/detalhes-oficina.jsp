@@ -7,7 +7,7 @@
     </div> 
 
     <div class="panel panel-default">
-        <div class="panel-heading">Oficina</div>
+        <div class="panel-heading">Dados da Oficina</div>
         <div class="panel-body">
 
             <input type="hidden" name="oficina.id" value="<s:property value="oficina.id"/>">
@@ -44,14 +44,14 @@
                     <s:param name="id" value="%{oficina.id}"></s:param>
                 </s:url>
                 <s:a href="%{editURL}">
-                    <span class="glyphicon glyphicon-pencil">&nbsp;</span>
+                    <span class="glyphicon glyphicon-pencil" title="Clique aqui para editar!!!">&nbsp;</span>
                 </s:a>
 
                 <s:url id="deleteURL" action="excluirOficina">
                     <s:param name="oficina.id" value="%{oficina.id}"></s:param>
                 </s:url>
                 <s:a href="%{deleteURL}">
-                    <span class="glyphicon glyphicon-trash">&nbsp;</span>
+                    <span class="glyphicon glyphicon-trash" title="Clique aqui para excluir!!!">&nbsp;</span>
                 </s:a>
 
                 <a href="#" title="Clique aqui para editar!!!"></a>               

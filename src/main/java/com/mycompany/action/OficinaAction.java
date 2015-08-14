@@ -108,8 +108,8 @@ public class OficinaAction {
     }
     
         @Action(value = "listaOficinasDropdown", results = {
-        @Result(name = "success", location = "/cadastrar-ocorrencia.jsp"),
-        @Result(name = "error", location = "/cadastrar-ocorrencia.jsp")
+        @Result(name = "success", location = "/cadastra-ocorrencia.jsp"),
+        @Result(name = "error", location = "/cadastra-ocorrencia.jsp")
     })
     public String listaOficinasDropdown() {
         listaoficinas = dao.listar();

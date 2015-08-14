@@ -42,7 +42,7 @@
                                 <s:url id="editURL" action="selecionaChamado">
                                     <s:param name="id" value="%{id}"></s:param>
                                 </s:url>
-                                <s:a href="%{editURL}" cssClass="glyphicon glyphicon-zoom-in zoom" ></s:a>
+                                <s:a href="%{editURL}" cssClass="glyphicon glyphicon-zoom-in zoom" title="Clique aqui para visualizar com detalhes!!!"></s:a>
                                 </td>
 
                             </tr>

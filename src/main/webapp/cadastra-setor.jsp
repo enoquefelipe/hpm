@@ -5,7 +5,7 @@
 
     <h4 class="tittle-page">Cadastro de Setor</h4>
 
-    <form class="form-horizontal" action="addOcorrencia" method="POST">
+    <form class="form-horizontal" action="addSetor" method="POST">
         <div class="panel panel-default">
             <div class="panel-heading">     
                 <h3 class="panel-title">Dados do Setor</h3>
