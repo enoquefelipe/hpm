@@ -1,33 +1,40 @@
 package com.mycompany.dao;
 
+import com.mycompany.entities.Empresa;
+import com.mycompany.entities.Oficina;
+import com.mycompany.utils.HibernateUtil;
 import java.util.List;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
  * @author Administrador
  */
-public class EmpresaDao implements Dao {
+public class EmpresaDao {
 
-    @Override
-    public void salvar() {
+    public void salvar(Empresa empresa) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.save(empresa);
+        t.commit();
+        session.close();
     }
 
-    @Override
-    public List listar() {
-        return null;
+    public List<Empresa> listar() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        List lista = session.createQuery("from Empresa").list();
+        t.commit();
+        return lista;
     }
 
-    @Override
-    public Object selecionar() {
-        return null;
+    public void selecionar() {
     }
 
-    @Override
     public void remover() {
     }
 
-    @Override
     public void atualizar() {
     }
-
 }

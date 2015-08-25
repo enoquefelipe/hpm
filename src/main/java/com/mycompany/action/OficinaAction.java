@@ -20,12 +20,13 @@ public class OficinaAction {
     private Oficina oficina = new Oficina();
     private List<Oficina> listaoficinas = new ArrayList<>();
     private String message;
-    private OficinaDao dao = new OficinaDao();
+    private OficinaDao dao;
 
     @Action(value = "addOficina", results
             = @Result(name = "success", location = "/cadastra-oficina.jsp"))
     public String addOficina() {
-        dao.salvar(oficina);
+        dao = new OficinaDao();
+        this.dao.salvar(oficina);
         message = "Oficina cadastrada com sucesso!";
         return "success";
     }
@@ -35,7 +36,8 @@ public class OficinaAction {
         @Result(name = "error", location = "/lista-oficina.jsp")
     })
     public String listaOficinas() {
-        listaoficinas = dao.listar();
+        dao = new OficinaDao();
+        listaoficinas = this.dao.listar();
         if (listaoficinas.isEmpty()) {
             setMessage("Nenhum registro encontado!");
             return "success";
@@ -49,7 +51,8 @@ public class OficinaAction {
         @Result(name = "error", location = "/lista-oficina-ajax.jsp")
     })
     public String listaOficinasAjax() {
-        listaoficinas = dao.listar();
+        dao = new OficinaDao();
+        listaoficinas = this.dao.listar();
         if (listaoficinas.isEmpty()) {
             setMessage("Nenhum registro encontado!");
             return "success";
@@ -63,16 +66,18 @@ public class OficinaAction {
         @Result(name = "error", location = "/Home.jsp")
     })
     public String detalhesOficina() {
+        dao = new OficinaDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
-        oficina = dao.selecionar(Integer.parseInt(request.getParameter("id")));
+        oficina = this.dao.selecionar(Integer.parseInt(request.getParameter("id")));
         return "success";
     }
 
     @Action(value = "selecionaOficina", results
             = @Result(name = "success", location = "/edita-oficina.jsp"))
     public String selecionaOficina() {
+        dao = new OficinaDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
-        oficina = dao.selecionar(Integer.parseInt(request.getParameter("id")));
+        oficina = this.dao.selecionar(Integer.parseInt(request.getParameter("id")));
         return "success";
     }
 
@@ -81,7 +86,8 @@ public class OficinaAction {
         @Result(name = "error", location = "/Home.jsp")
     })
     public String excluirOficina() {
-        dao.remover(oficina);
+        dao = new OficinaDao();
+        this.dao.remover(oficina);
         setMessage("Oficina removida com sucesso!!!");
         return "success";
     }
@@ -91,33 +97,36 @@ public class OficinaAction {
         @Result(name = "error", location = "/Home.jsp")
     })
     public String pesquisarOficina() throws UnsupportedEncodingException {
-        listaoficinas = dao.pesquisar(oficina.getDescricao());
+        dao = new OficinaDao();
+        listaoficinas = this.dao.pesquisar(oficina.getDescricao());
         if (listaoficinas.isEmpty()) {
             setMessage("Nenhum registro encontado!");
             return "success";
         } else {
-            return "success";
+            return "error";
         }
     }
 
     @Action(value = "atualizaOficina", results
             = @Result(name = "success", type = "redirectAction", params = {"actionName", "listaOficinas"}))
     public String atualizaOficina() {
-        dao.atualizar(oficina);
+        dao = new OficinaDao();
+        this.dao.atualizar(oficina);
         return "success";
     }
-    
-        @Action(value = "listaOficinasDropdown", results = {
+
+    @Action(value = "listaOficinasDropdown", results = {
         @Result(name = "success", location = "/cadastra-ocorrencia.jsp"),
         @Result(name = "error", location = "/cadastra-ocorrencia.jsp")
     })
     public String listaOficinasDropdown() {
-        listaoficinas = dao.listar();
+        dao = new OficinaDao();
+        listaoficinas = this.dao.listar();
         if (listaoficinas.isEmpty()) {
-            setMessage("Nenhum registro encontado!");
+            setMessage("Nenhum registro de Oficina encontado, para continuar por favor efetuar o cadastro!");
             return "success";
         } else {
-            return "success";
+            return "error";
         }
     }
 

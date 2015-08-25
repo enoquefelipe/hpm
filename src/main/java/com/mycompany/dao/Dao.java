@@ -12,7 +12,7 @@ public interface Dao {
 
     List listar();
 
-    Object selecionar();
+    void selecionar();
     
     void remover();
     
