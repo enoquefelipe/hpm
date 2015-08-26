@@ -1,6 +1,6 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="/struts-tags" prefix="s"%>
-<%@taglib prefix="sx" uri="/struts-dojo-tags"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags"%>
 <jsp:include page="inc/header.jsp"/>
 <section>
 
@@ -29,7 +29,7 @@
                     <s:iterator value="listaempresas" status="userStatus">
 
                         <tr>
-                            <td class="tabela-chamados"> <s:property value="razao-social" />  </td>
+                            <td class="tabela-chamados"> <s:property value="nome_fantasia" />  </td>
                             <td class="tabela-chamados"> <s:property value="cnpj" /> </td>
 
                             <td class="tabela-chamados"> 

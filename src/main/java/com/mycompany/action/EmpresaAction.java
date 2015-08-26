@@ -4,8 +4,11 @@ import com.mycompany.dao.EmpresaDao;
 import com.mycompany.entities.Contato;
 import com.mycompany.entities.Empresa;
 import com.mycompany.entities.Endereco;
+import com.opensymphony.xwork2.ActionContext;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 
@@ -45,6 +48,16 @@ public class EmpresaAction {
         } else {
             return "success";
         }
+    }
+
+    @Action(value = "detalhesEmpresa", results = {
+        @Result(name = "success", location = "/detalhes-empresa.jsp")
+    })
+    public String detalhesEmpresa() {
+        EmpresaDao dao = new EmpresaDao();
+        HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+        empresa = dao.selecionar(Integer.parseInt(request.getParameter("id")));
+        return "success";
     }
 
     // Getter

@@ -29,9 +29,10 @@ public class EmpresaDao {
         return lista;
     }
 
-    public void selecionar() {
+    public Empresa selecionar(int id) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        return (Empresa) session.load(Empresa.class, id);
     }
-
     public void remover() {
     }
 
