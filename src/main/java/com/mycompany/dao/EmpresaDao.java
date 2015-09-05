@@ -1,7 +1,6 @@
 package com.mycompany.dao;
 
 import com.mycompany.entities.Empresa;
-import com.mycompany.entities.Oficina;
 import com.mycompany.utils.HibernateUtil;
 import java.util.List;
 import org.hibernate.Session;
@@ -33,6 +32,7 @@ public class EmpresaDao {
         Session session = HibernateUtil.getSessionFactory().openSession();
         return (Empresa) session.load(Empresa.class, id);
     }
+    
     public void remover() {
     }
 

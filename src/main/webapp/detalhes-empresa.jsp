@@ -28,13 +28,74 @@
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">CNPJ</label>
+                <label class="col-sm-2 control-label">CNPJ:</label>
                 <s:property value="empresa.cnpj"/>
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">Inscrição Estadual</label>
+                <label class="col-sm-2 control-label">Inscrição Estadual:</label>
                 <s:property value="empresa.inscricao_estadual"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Dados de Localização</div>
+        <div class="panel-body">
+
+            <input type="hidden" name="endereco.id" value="<s:property value="endereco.id"/>">
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">CEP:</label>
+                <s:property value="empresa.endereco.cep"/>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Endereço:</label>
+                <s:property value="empresa.endereco.logradouro"/>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Bairro:</label>
+                <s:property value="empresa.endereco.bairro"/>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Cidade:</label>
+                <s:property value="empresa.endereco.cidade"/>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Estado:</label>
+                <s:property value="empresa.endereco.estado"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Dados de Contato</div>
+        <div class="panel-body">
+
+            <input type="hidden" name="empresa.contato.id" value="<s:property value="contato.id"/>">
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Telefone Fixo:</label>
+                <s:property value="empresa.contato.residencial"/>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Telefone Celular:</label>
+                <s:property value="empresa.contato.movel"/>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">E-mail:</label>
+                <s:property value="empresa.contato.email"/>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Site:</label>
+                <s:property value="empresa.contato.site"/>
             </div>
 
             <hr>
@@ -56,8 +117,9 @@
 
                 <a href="#" title="Clique aqui para editar!!!"></a>               
             </div>
-
         </div>
     </div>
+
+
 </section>
 <jsp:include page="inc/footer.html"/>

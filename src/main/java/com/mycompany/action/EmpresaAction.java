@@ -1,6 +1,8 @@
 package com.mycompany.action;
 
+import com.mycompany.dao.ContatoDao;
 import com.mycompany.dao.EmpresaDao;
+import com.mycompany.dao.EnderecoDao;
 import com.mycompany.entities.Contato;
 import com.mycompany.entities.Empresa;
 import com.mycompany.entities.Endereco;
@@ -54,9 +56,15 @@ public class EmpresaAction {
         @Result(name = "success", location = "/detalhes-empresa.jsp")
     })
     public String detalhesEmpresa() {
-        EmpresaDao dao = new EmpresaDao();
+        EmpresaDao empDao = new EmpresaDao();
+        ContatoDao conDao = new ContatoDao();
+        EnderecoDao endDao = new EnderecoDao();
+        
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
-        empresa = dao.selecionar(Integer.parseInt(request.getParameter("id")));
+        int id = Integer.parseInt(request.getParameter("id"));
+        empresa = empDao.selecionar(id);
+//        endereco = dao.selecionar(id);
+//        contato = dao.selecionar(id);
         return "success";
     }
 

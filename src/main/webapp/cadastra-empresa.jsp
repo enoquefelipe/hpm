@@ -93,7 +93,7 @@
 
                 <div class="form-group">
                     <label for="">E-mail</label>
-                    <input type="email" class="form-control" id="" name="contato.residencial.email" placeholder="">
+                    <input type="email" class="form-control" id="" name="contato.email" placeholder="">
                 </div>
 
                 <div class="form-group">
