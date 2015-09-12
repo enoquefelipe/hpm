@@ -109,7 +109,7 @@
                 </s:a>
 
                 <s:url id="deleteURL" action="excluirEmpresa">
-                    <s:param name="oficina.id" value="%{empresa.id}"></s:param>
+                    <s:param name="empresa.id" value="%{empresa.id}"></s:param>
                 </s:url>
                 <s:a href="%{deleteURL}">
                     <span class="glyphicon glyphicon-trash" title="Clique aqui para excluir!!!">&nbsp;</span>

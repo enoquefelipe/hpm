@@ -32,8 +32,12 @@ public class EmpresaDao {
         Session session = HibernateUtil.getSessionFactory().openSession();
         return (Empresa) session.load(Empresa.class, id);
     }
-    
-    public void remover() {
+
+    public void remover(Empresa empresa) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.delete(empresa);
+        t.commit();
     }
 
     public void atualizar() {

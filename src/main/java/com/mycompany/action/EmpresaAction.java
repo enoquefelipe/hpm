@@ -56,15 +56,21 @@ public class EmpresaAction {
         @Result(name = "success", location = "/detalhes-empresa.jsp")
     })
     public String detalhesEmpresa() {
-        EmpresaDao empDao = new EmpresaDao();
-        ContatoDao conDao = new ContatoDao();
-        EnderecoDao endDao = new EnderecoDao();
-        
+        EmpresaDao dao = new EmpresaDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
         int id = Integer.parseInt(request.getParameter("id"));
-        empresa = empDao.selecionar(id);
-//        endereco = dao.selecionar(id);
-//        contato = dao.selecionar(id);
+        empresa = dao.selecionar(id);
+        return "success";
+    }
+
+    @Action(value = "excluirEmpresa", results = {
+        @Result(name = "success", type = "redirectAction", params = {"actionName", "listaEmpresas"}),
+        @Result(name = "error", location = "/Home.jsp")
+    })
+    public String excluirEmpresa() {
+        EmpresaDao dao = new EmpresaDao();
+        dao.remover(empresa);
+        setMessage("Empresa removida com sucesso!!!");
         return "success";
     }
 

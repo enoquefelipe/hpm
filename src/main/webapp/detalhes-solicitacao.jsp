@@ -15,7 +15,7 @@
                 <div class="panel-heading">Dados do Chamado</div>
                 <div class="panel-body">
 
-                    <form action="novoChamado" method="POST">
+                    <form action="#" method="POST">
                         <div class="row">
                             <div class="form-group col-sm-4">
                                 <label for="os">O.S <span class="glyphicon glyphicon-lock"></span></label>
@@ -62,9 +62,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div>
+                            <div class=" button-submit">
+                                <button type="submit" class="btn btn-default">Atender</button>
 
-                        <div class=" button-submit">
-                            <button type="submit" class="btn btn-default">Atender</button>
+                                <button type="submit" class="btn btn-primary">Excluir</button>
+                            </div>
                         </div>
                     </form>
                 </div>
