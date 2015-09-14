@@ -12,62 +12,60 @@
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <div>
-            <!-- Fixed navbar -->
-            <nav class="navbar navbar-inverse navbar">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">HPM</a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.action">Home</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Chamados<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="cadastra-solicitacao.jsp">Novo Chamado</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="listaChamados.action">Consultar Chamado</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Cadastros<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="cadastra-solicitacao.jsp">Chamado</a></li>
-                                    <li><a href="cadastra-usuario.jsp">Usuário</a></li>
-                                    <li><a href="cadastra-empresa.jsp">Empresa</a></li>
-                                    <li><a href="cadastra-oficina.jsp">Oficina</a></li>
-                                    <li><a href="listaOficinasDropdown.action">Ocorrência</a></li>
-                                    <li><a href="cadastra-setor.jsp">Setor</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Consultas<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="listaChamados.action">Chamados</a></li>
-                                    <li><a href="listaEmpresas.action">Empresas</a></li>
-                                    <li><a href="listaOficinas.action">Oficinas</a></li>
-                                    <li><a href="listaOficinasAjax.action">Oficinas Ajax</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
-                            <li><s:url action="Logout" var="url"/>
-                                <s:a href="%{url}">Sair</s:a>
-                            </li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header"  id="sanduiche">
+                    <button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">HPM</a>
                 </div>
-            </nav>
-        </div>
-
-        <div class="container">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav collapse navbar-collapse">
+                        <li><a href="index.action">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Chamados<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="cadastra-solicitacao.jsp">Novo Chamado</a></li>
+                                <li class="divider"></li>
+                                <li><a href="listaChamados.action">Consultar Chamado</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Cadastros<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="cadastra-solicitacao.jsp">Chamado</a></li>
+                                <li><a href="cadastra-usuario.jsp">Usuário</a></li>
+                                <li><a href="cadastra-empresa.jsp">Empresa</a></li>
+                                <li><a href="cadastra-oficina.jsp">Oficina</a></li>
+                                <li><a href="listaOficinasDropdown.action">Ocorrência</a></li>
+                                <li><a href="cadastra-setor.jsp">Setor</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Consultas<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="listaChamados.action">Chamados</a></li>
+                                <li><a href="listaEmpresas.action">Empresas</a></li>
+                                <li><a href="listaOficinas.action">Oficinas</a></li>
+                                <li><a href="listaOficinasAjax.action">Oficinas Ajax</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=session.getAttribute("usuario")%><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Perfil</a></li>
+                                <li class="divider"></li>
+                                <li><s:url action="Logout" var="url"/><s:a href="%{url}">Sair</s:a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+<div class="container">
