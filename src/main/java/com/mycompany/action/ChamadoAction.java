@@ -42,12 +42,17 @@ public class ChamadoAction {
         @Result(name = "error", location = "/Home.jsp")
     })
     public String listaChamados() {
-        ChamadoDao dao = new ChamadoDao();
-        listachamados = dao.listar();
-        if (listachamados.isEmpty()) {
-            setMessage("Nenhum registro encontado!");
-            return "success";
-        } else {
+        try {
+            ChamadoDao dao = new ChamadoDao();
+            listachamados = dao.listar();
+            if (listachamados.isEmpty()) {
+                setMessage("Nenhum registro encontado!");
+                return "success";
+            } else {
+                return "success";
+            }
+        } catch (Exception e) {
+            setMessage(e.getMessage());
             return "success";
         }
     }
