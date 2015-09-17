@@ -12,20 +12,20 @@ import org.hibernate.Transaction;
  */
 public class ChamadoDao {
 
-    public int salvar(Chamado ticket) {
+    public int salvar(Chamado chamado) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        session.save(ticket);
+        session.save(chamado);
         t.commit();
-        return ticket.getId();
+        return chamado.getId();
     }
 
     public List<Chamado> listar() {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction t = session.beginTransaction();
-        List lista = session.createQuery("from Chamado").list();
-        t.commit();
-        return lista;
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            Transaction t = session.beginTransaction();
+            List lista = session.createQuery("from Chamado").list();
+            t.commit();
+            return lista;
     }
 
     public Chamado selecionar(int id) {

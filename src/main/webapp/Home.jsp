@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-2"> </div>
         <div class="col-md-8">
-            <p><center> Bem vindo ao Projeto XPTÓ </center></p>
+            <p><center> Bem vindo ao HPM </center></p>
 
             <p>
                 <label> Usuário: </label> <%=session.getAttribute("usuario")%>

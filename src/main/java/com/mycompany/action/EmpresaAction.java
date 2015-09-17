@@ -1,8 +1,6 @@
 package com.mycompany.action;
 
-import com.mycompany.dao.ContatoDao;
 import com.mycompany.dao.EmpresaDao;
-import com.mycompany.dao.EnderecoDao;
 import com.mycompany.entities.Contato;
 import com.mycompany.entities.Empresa;
 import com.mycompany.entities.Endereco;
@@ -37,24 +35,29 @@ public class EmpresaAction {
         return "success";
     }
 
-    @Action(value = "listaEmpresas", results = {
+    // Método Lista Empresas 
+    @Action(value = "lisemp", results = {
         @Result(name = "success", location = "/lista-empresa.jsp"),
         @Result(name = "error", location = "/lista-empresa.jsp")
     })
-    public String listaEmpresas() {
-        EmpresaDao dao = new EmpresaDao();
-        listaempresas = dao.listar();
-        if (listaempresas.isEmpty()) {
-            setMessage("Nenhum registro encontado!");
+    public String lisemp() {
+        try {
+            EmpresaDao dao = new EmpresaDao();
+            listaempresas = dao.listar();
+            if (listaempresas.isEmpty()) {
+                setMessage("Nenhum registro encontado!");
+                return "success";
+            }
             return "success";
-        } else {
+        } catch (Exception e) {
+            setMessage("Error: " + e.getMessage() + ".");
             return "success";
         }
     }
 
-    @Action(value = "detalhesEmpresa", results = {
-        @Result(name = "success", location = "/detalhes-empresa.jsp")
-    })
+    @Action(value = "detalhesEmpresa", results
+            = @Result(name = "success", location = "/detalhes-empresa.jsp")
+    )
     public String detalhesEmpresa() {
         EmpresaDao dao = new EmpresaDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
@@ -63,8 +66,25 @@ public class EmpresaAction {
         return "success";
     }
 
+    @Action(value = "selecionaEmpresa", results
+            = @Result(name = "success", location = "/edita-empresa.jsp")
+    )
+    public String selecionaEmpresa() {
+        EmpresaDao dao = new EmpresaDao();
+        HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+        empresa = dao.selecionar(Integer.parseInt(request.getParameter("id")));
+        return "success";
+    }
+
+    @Action(value = "atualizaEmpresa", results
+            = @Result(name = "success", type = "redirectAction", params = {"actionName", "lisemp"})
+    )
+    public String atualizaEmpresa() {
+        return "success";
+    }
+
     @Action(value = "excluirEmpresa", results = {
-        @Result(name = "success", type = "redirectAction", params = {"actionName", "listaEmpresas"}),
+        @Result(name = "success", type = "redirectAction", params = {"actionName", "lisemp"}),
         @Result(name = "error", location = "/Home.jsp")
     })
     public String excluirEmpresa() {

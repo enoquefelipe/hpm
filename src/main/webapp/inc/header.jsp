@@ -31,7 +31,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="cadastra-solicitacao.jsp">Novo Chamado</a></li>
                                 <li class="divider"></li>
-                                <li><a href="listaChamados.action">Consultar Chamado</a></li>
+                                <li><a href="lischa.action">Consultar Chamado</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -48,8 +48,8 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Consultas<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="listaChamados.action">Chamados</a></li>
-                                <li><a href="listaEmpresas.action">Empresas</a></li>
+                                <li><a href="lischa.action">Chamados</a></li>
+                                <li><a href="lisemp.action">Empresas</a></li>
                                 <li><a href="listaOficinas.action">Oficinas</a></li>
                                 <li><a href="listaOficinasAjax.action">Oficinas Ajax</a></li>
                             </ul>
@@ -59,7 +59,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=session.getAttribute("usuario")%><b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Perfil</a></li>
+                                <li><a href="perfil.jsp">Perfil</a></li>
                                 <li class="divider"></li>
                                 <li><s:url action="Logout" var="url"/><s:a href="%{url}">Sair</s:a></li>
                             </ul>

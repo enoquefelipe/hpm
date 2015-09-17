@@ -15,7 +15,7 @@ import org.apache.struts2.convention.annotation.Result;
  * @author Administrador
  */
 public class ChamadoAction {
-
+    
     private Chamado chamado = new Chamado();
     private List<Chamado> listachamados = new ArrayList<>();
     private String message;
@@ -26,7 +26,7 @@ public class ChamadoAction {
         @Result(name = "success", location = "/cadastra-solicitacao.jsp"),
         @Result(name = "error", location = "/error.html")
     })
-
+    
     public String novoChamado() {
         java.util.Date dataAtual = new java.util.Date(System.currentTimeMillis());
         chamado.setData_abertura(dataAtual);
@@ -37,50 +37,55 @@ public class ChamadoAction {
         return "success";
     }
 
-    @Action(value = "listaChamados", results = {
+    // Metodo Lista Chamados
+    @Action(value = "lischa", results = {
         @Result(name = "success", location = "/lista-solicitacao.jsp"),
         @Result(name = "error", location = "/Home.jsp")
     })
-    public String listaChamados() {
+    public String lischa() {
         try {
             ChamadoDao dao = new ChamadoDao();
             listachamados = dao.listar();
             if (listachamados.isEmpty()) {
                 setMessage("Nenhum registro encontado!");
                 return "success";
-            } else {
-                return "success";
             }
+            return "success";
         } catch (Exception e) {
-            setMessage(e.getMessage());
+            setMessage("Error: " + e.getMessage() + ".");
             return "success";
         }
     }
-
+    
     @Action(value = "selecionaChamado", results = {
         @Result(name = "success", location = "/detalhes-solicitacao.jsp"),
         @Result(name = "error", location = "/Home.jsp")
     })
     public String selecionaChamado() {
-        ChamadoDao dao = new ChamadoDao();
-        HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
-        chamado = dao.selecionar(Integer.parseInt(request.getParameter("id")));
-        return "success";
+        try {
+            ChamadoDao dao = new ChamadoDao();
+            HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+            chamado = dao.selecionar(Integer.parseInt(request.getParameter("id")));
+            return "success";
+        } catch (NumberFormatException e) {
+            setMessage("Error: " + e.getMessage() + ".");
+            return "error";
+        }
     }
 
     // Getters
     public Chamado getTicket() {
         return chamado;
     }
-
+    
     public String getMessage() {
         return message;
     }
-
+    
     public List<Chamado> getListachamados() {
         return listachamados;
     }
-
+    
     public int getId() {
         return id;
     }
@@ -89,17 +94,17 @@ public class ChamadoAction {
     public void setTicket(Chamado ticket) {
         this.chamado = ticket;
     }
-
+    
     public void setMessage(String message) {
         this.message = message;
     }
-
+    
     public void setListachamados(List<Chamado> listachamados) {
         this.listachamados = listachamados;
     }
-
+    
     public void setId(int id_solicitacao) {
         this.id = id_solicitacao;
     }
-
+    
 }

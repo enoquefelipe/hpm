@@ -4,7 +4,7 @@
 <jsp:include page="inc/header.jsp"/>
 <section>
 
-    <form class="form-inline" method="POST" action="pesquisarOficina">
+    <form class="form-inline" method="POST" action="#">
         <div style="text-align: right">
             <div class="input-group">
                 <input type="text" name="oficina.descricao" class="form-control" placeholder="Pesquisar...">

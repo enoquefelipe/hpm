@@ -56,9 +56,8 @@ public class OficinaAction {
         if (listaoficinas.isEmpty()) {
             setMessage("Nenhum registro encontado!");
             return "success";
-        } else {
-            return "success";
         }
+        return "success";
     }
 
     @Action(value = "detalhesOficina", results = {
@@ -94,7 +93,7 @@ public class OficinaAction {
 
     @Action(value = "pesquisarOficina", results = {
         @Result(name = "success", location = "/lista-oficina-ajax-result.jsp"),
-        @Result(name = "error", location = "/Home.jsp")
+        @Result(name = "error", location = "/lista-oficina-ajax-result.jsp")
     })
     public String pesquisarOficina() throws UnsupportedEncodingException {
         dao = new OficinaDao();
