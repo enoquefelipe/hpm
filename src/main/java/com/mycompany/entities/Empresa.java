@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import org.hibernate.annotations.Cascade;
 
 /**
  *
@@ -22,10 +23,37 @@ public class Empresa implements Serializable {
     private int id;
     private String razao_social, nome_fantasia, inscricao_estadual, cnpj;
 
-    @OneToOne(cascade = CascadeType.ALL)
+//    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, optional = true)
+//    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToOne(cascade = CascadeType.ALL, optional = true)
     private Contato contato;
-    @OneToOne(cascade = CascadeType.ALL)
+
+//    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, optional = true)
+    @OneToOne(cascade = CascadeType.ALL, optional = true)
+//    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     private Endereco endereco;
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 89 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Empresa other = (Empresa) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
 
     // Getters
     public int getId() {

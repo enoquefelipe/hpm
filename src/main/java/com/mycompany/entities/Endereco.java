@@ -35,6 +35,28 @@ public class Endereco implements Serializable {
         this.complemento = complemento;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Endereco other = (Endereco) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
+     
     public int getId() {
         return id;
     }

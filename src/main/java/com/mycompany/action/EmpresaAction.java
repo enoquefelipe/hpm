@@ -1,6 +1,8 @@
 package com.mycompany.action;
 
+import com.mycompany.dao.ContatoDao;
 import com.mycompany.dao.EmpresaDao;
+import com.mycompany.dao.EnderecoDao;
 import com.mycompany.entities.Contato;
 import com.mycompany.entities.Empresa;
 import com.mycompany.entities.Endereco;

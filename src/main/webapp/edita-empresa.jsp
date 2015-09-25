@@ -15,7 +15,7 @@
 
                 <div class="form-group">
                     <label for="id" class="col-sm-2 control-label">ID</label>
-                    <div class="col-sm-8">
+                    <div class="col-sm-1">
                         <input type="text" class="form-control" id="id" value="<s:property value="empresa.id"/>" disabled>
                         <input type="hidden" name="empresa.id" value="<s:property value="empresa.id"/>">
                     </div>
@@ -23,22 +23,29 @@
 
                 <div class="form-group">
                     <label for="sigla" class="col-sm-2 control-label">Razão Social</label>
-                    <div class="col-sm-8">
+                    <div class="col-sm-6">
                         <input type="text" name="empresa.razao_social" class="form-control" id="sigla" value="<s:property value="empresa.razao_social"/>" size="4" maxlength="4">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="nome" class="col-sm-2 control-label">Nome Fantasia</label>
-                    <div class="col-sm-8">
+                    <div class="col-sm-6">
                         <input type="text" name="empresa.nome_fantasia" class="form-control" id="nome" value="<s:property value="empresa.nome_fantasia"/>">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="descricao" class="col-sm-2 control-label">CNPJ</label>
-                    <div class="col-sm-8">
+                    <div class="col-sm-3">
                         <input type="text" name="empresa.cnpj" class="form-control" id="cnpj" value="<s:property value="empresa.cnpj"/>">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="">Incrição Estadual</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="" name="empresa.inscricao_estadual" value="<s:property value="empresa.inscricao_estadual"/>">
                     </div>
                 </div>
 

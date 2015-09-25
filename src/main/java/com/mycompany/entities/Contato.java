@@ -20,6 +20,28 @@ public class Contato implements Serializable {
     private int id;
     private String email, site, residencial, movel, comercial, fax, obs;
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 31 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Contato other = (Contato) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
+
     public int getId() {
         return id;
     }
@@ -83,5 +105,4 @@ public class Contato implements Serializable {
     public void setObs(String obs) {
         this.obs = obs;
     }
-
 }

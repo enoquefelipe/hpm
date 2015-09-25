@@ -18,10 +18,12 @@
             </div>
         </form
 
-
         <s:form>
 
             <h4 class="tittle-page">Chamados</h4>
+            <div style=" color: green; text-align: center; ">
+                <s:property value="message_alerta"/>
+            </div>
             <table class="table table-striped">
                 <tr>
                     <th class="tabela-chamados"> O.S       </th>
@@ -39,7 +41,7 @@
                             <td class="tabela-chamados"> <s:property value="data_abertura" /> </td>
 
                             <td class="tabela-chamados"> 
-                                <s:url id="editURL" action="selecionaChamado">
+                                <s:url id="editURL" action="selCha">
                                     <s:param name="id" value="%{id}"></s:param>
                                 </s:url>
                                 <s:a href="%{editURL}" cssClass="glyphicon glyphicon-zoom-in zoom" title="Clique aqui para visualizar com detalhes!!!"></s:a>

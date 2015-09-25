@@ -29,7 +29,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Chamados<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="cadastra-solicitacao.jsp">Novo Chamado</a></li>
+                                <li><a href="cadastra-chamado.jsp">Novo Chamado</a></li>
                                 <li class="divider"></li>
                                 <li><a href="lischa.action">Consultar Chamado</a></li>
                             </ul>
@@ -37,7 +37,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Cadastros<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="cadastra-solicitacao.jsp">Chamado</a></li>
+                                <li><a href="cadastra-chamado.jsp">Chamado</a></li>
                                 <li><a href="cadastra-usuario.jsp">Usuário</a></li>
                                 <li><a href="cadastra-empresa.jsp">Empresa</a></li>
                                 <li><a href="cadastra-oficina.jsp">Oficina</a></li>

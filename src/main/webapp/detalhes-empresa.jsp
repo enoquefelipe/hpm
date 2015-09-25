@@ -47,7 +47,7 @@
 
             <div class="form-group">
                 <label class="col-sm-2 control-label">CEP:</label>
-                <s:property value="empresa.endereco.cep"/>
+                    <s:property value="empresa.endereco.cep"/>
             </div>
 
             <div class="form-group">

@@ -84,12 +84,16 @@
                                 </div>
 
                             </div>
+
                             <div class="foot">
                                 <button class="btn btn-default" data-dismiss="modal" type="submit">Entrar</button>
                             </div>
                             <br>
                             <div style =" color: red ">
                                 <s:property value="mensagem"/>
+                            </div>
+                            <div>
+                                <a href="cadastra-usuario-publico.html">Cadastre-se</a>
                             </div>
                         </form>
                     </div>

@@ -13,7 +13,6 @@
             </div>
             <div class="panel-body">
 
-                <form class="form-horizontal" action="addOficina" method="POST">
                     <div class="form-group">
                         <label for="" class="col-sm-2 control-label">Sigla</label>
                         <div class="col-sm-2">
