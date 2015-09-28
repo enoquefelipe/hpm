@@ -21,8 +21,9 @@
             <h4 class="tittle-page">Empresas</h4>
             <table class="table table-striped">
                 <tr>
-                    <th class="tabela-chamados"> NOME   </th>
-                    <th class="tabela-chamados"> CNPJ     </th>
+                    <th class="tabela-chamados"> Nome  </th>
+                    <th class="tabela-chamados"> CNPJ  </th>
+                    <th class="tabela-chamados"> Abrir </th>
                 </tr>
 
                 <s:if test="listaempresas.size() > 0" >
@@ -33,7 +34,7 @@
                             <td class="tabela-chamados"> <s:property value="cnpj" /> </td>
 
                             <td class="tabela-chamados"> 
-                                <s:url id="editURL" action="detalhesEmpresa">
+                                <s:url id="editURL" action="detemp">
                                     <s:param name="id" value="%{id}"></s:param>
                                 </s:url>
                                 <s:a href="%{editURL}" cssClass="glyphicon glyphicon-zoom-in zoom" title="Clique aqui para visualizar com detalhes!!!"></s:a>

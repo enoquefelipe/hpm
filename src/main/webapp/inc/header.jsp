@@ -25,13 +25,13 @@
                 </div>
                 <div class="container-fluid">
                     <ul class="nav navbar-nav collapse navbar-collapse">
-                        <li><a href="index.action">Home</a></li>
+                        <li><a href="index">Home</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Chamados<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="cadastra-chamado.jsp">Novo Chamado</a></li>
                                 <li class="divider"></li>
-                                <li><a href="lischa.action">Consultar Chamado</a></li>
+                                <li><a href="lischa">Consultar Chamado</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -48,10 +48,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Consultas<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="lischa.action">Chamados</a></li>
-                                <li><a href="lisemp.action">Empresas</a></li>
-                                <li><a href="listaOficinas.action">Oficinas</a></li>
-                                <li><a href="listaOficinasAjax.action">Oficinas Ajax</a></li>
+                                <li><a href="lischa">Chamados</a></li>
+                                <li><a href="lisemp">Empresas</a></li>
+                                <li><a href="listaOficinas">Oficinas</a></li>
+                                <li><a href="listaOficinasAjax">Oficinas Ajax</a></li>
                             </ul>
                         </li>
                     </ul>

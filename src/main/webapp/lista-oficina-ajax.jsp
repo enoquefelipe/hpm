@@ -21,10 +21,10 @@
         <h4 class="tittle-page">Oficinas</h4>
         <table class="table table-striped">
             <tr>
-                <th class="tabela-chamados"> SIGLA    </th>
-                <th class="tabela-chamados"> NOME     </th>
-                <th class="tabela-chamados"> ATIVA    </th>
-                <th class="tabela-chamados"> DETALHES </th>
+                <th class="tabela-chamados"> Sigla  </th>
+                <th class="tabela-chamados"> Nome   </th>
+                <th class="tabela-chamados"> Status </th>
+                <th class="tabela-chamados"> Abrir  </th>
             </tr>
 
             <s:if test="listaoficinas.size() > 0" >

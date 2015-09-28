@@ -6,7 +6,7 @@
 
     <h4 class="tittle-page">Cadastro de Empresa</h4>
 
-    <form action="cadastraEmpresa" method="POST" class="form-horizontal">
+    <form action="cademp" method="POST" class="form-horizontal">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Dados da Empresa</h3>

@@ -43,11 +43,11 @@
         <div class="panel-heading">Dados de Localização</div>
         <div class="panel-body">
 
-            <input type="hidden" name="endereco.id" value="<s:property value="endereco.id"/>">
+            <input type="hidden" name="endereco.id" value="<s:property value="empresa.endereco.id"/>">
 
             <div class="form-group">
                 <label class="col-sm-2 control-label">CEP:</label>
-                    <s:property value="empresa.endereco.cep"/>
+                <s:property value="empresa.endereco.cep"/>
             </div>
 
             <div class="form-group">
@@ -76,7 +76,7 @@
         <div class="panel-heading">Dados de Contato</div>
         <div class="panel-body">
 
-            <input type="hidden" name="empresa.contato.id" value="<s:property value="contato.id"/>">
+            <input type="hidden" name="contato.id" value="<s:property value="empresa.contato.id"/>">
 
             <div class="form-group">
                 <label class="col-sm-2 control-label">Telefone Fixo:</label>
@@ -111,11 +111,9 @@
                 <s:url id="deleteURL" action="excluirEmpresa">
                     <s:param name="empresa.id" value="%{empresa.id}"></s:param>
                 </s:url>
-                <s:a href="%{deleteURL}">
-                    <span class="glyphicon glyphicon-trash" title="Clique aqui para excluir!!!">&nbsp;</span>
-                </s:a>
 
-                <a href="#" title="Clique aqui para editar!!!"></a>               
+                <a href="excluirEmpresa?empresa.id=<s:property value="empresa.id"/>&endereco.id=<s:property value="empresa.endereco.id"/>&contato.id=<s:property value="empresa.contato.id"/>" class="glyphicon glyphicon-trash" title="Clique aqui para excluir!!!">&nbsp;</a>
+         
             </div>
         </div>
     </div>
