@@ -1,8 +1,6 @@
 package com.mycompany.action;
 
-import com.mycompany.dao.ContatoDao;
 import com.mycompany.dao.EmpresaDao;
-import com.mycompany.dao.EnderecoDao;
 import com.mycompany.entities.Contato;
 import com.mycompany.entities.Empresa;
 import com.mycompany.entities.Endereco;
@@ -26,9 +24,10 @@ public class EmpresaAction {
     private Endereco endereco = new Endereco();
     private List<Empresa> listaempresas = new ArrayList<>();
 
-    @Action(value = "cadastraEmpresa", results
+// Método cadastra Empresa
+    @Action(value = "cademp", results
             = @Result(name = "success", location = "/cadastra-empresa.jsp"))
-    public String cadastraEmpresa() {
+    public String cademp() {
         EmpresaDao dao = new EmpresaDao();
         empresa.setContato(contato);
         empresa.setEndereco(endereco);
@@ -56,11 +55,12 @@ public class EmpresaAction {
             return "success";
         }
     }
-
-    @Action(value = "detalhesEmpresa", results
+    
+    // Método detalhes empresa
+    @Action(value = "detemp", results
             = @Result(name = "success", location = "/detalhes-empresa.jsp")
     )
-    public String detalhesEmpresa() {
+    public String detemp() {
         EmpresaDao dao = new EmpresaDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
         int id = Integer.parseInt(request.getParameter("id"));
@@ -91,6 +91,8 @@ public class EmpresaAction {
     })
     public String excluirEmpresa() {
         EmpresaDao dao = new EmpresaDao();
+        empresa.setEndereco(endereco);
+        empresa.setContato(contato);
         dao.remover(empresa);
         setMessage("Empresa removida com sucesso!!!");
         return "success";

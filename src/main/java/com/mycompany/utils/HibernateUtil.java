@@ -12,6 +12,8 @@ import com.mycompany.entities.Chamado;
 import com.mycompany.entities.Usuario;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
+import teste.entity.Carro;
+import teste.entity.Marca;
 
 public class HibernateUtil {
 
@@ -31,6 +33,8 @@ public class HibernateUtil {
                 ac.addAnnotatedClass(Oficina.class);
                 ac.addAnnotatedClass(Setor.class);
                 ac.addAnnotatedClass(Ocorrencia.class);
+                ac.addAnnotatedClass(Carro.class);
+                ac.addAnnotatedClass(Marca.class);
                 sessionFactory = ac.configure().buildSessionFactory();
             } catch (Throwable ex) {
                 System.err.println("Initial SessionFactory creation failed." + ex);

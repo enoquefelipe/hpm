@@ -15,12 +15,12 @@
     </properties>
     
     <dependencies>
-        <dependency>
-            <groupId>ojdbc</groupId>
-            <artifactId>ojdbc</artifactId>
-            <version>14</version>
-        </dependency>
-        
+        <!--<dependency>
+              <groupId>ojdbc</groupId>
+              <artifactId>ojdbc</artifactId>
+              <version>14</version>
+          </dependency>
+        -->  
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
