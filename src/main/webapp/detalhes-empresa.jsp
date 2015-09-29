@@ -101,18 +101,18 @@
             <hr>
 
             <div class="tittle-page">
-                <s:url id="editURL" action="selecionaEmpresa">
+                <s:url id="editURL" action="selemp">
                     <s:param name="id" value="%{empresa.id}"></s:param>
                 </s:url>
                 <s:a href="%{editURL}">
                     <span class="glyphicon glyphicon-pencil" title="Clique aqui para editar!!!">&nbsp;</span>
                 </s:a>
 
-                <s:url id="deleteURL" action="excluirEmpresa">
+                <s:url id="deleteURL" action="excemp">
                     <s:param name="empresa.id" value="%{empresa.id}"></s:param>
                 </s:url>
 
-                <a href="excluirEmpresa?empresa.id=<s:property value="empresa.id"/>&endereco.id=<s:property value="empresa.endereco.id"/>&contato.id=<s:property value="empresa.contato.id"/>" class="glyphicon glyphicon-trash" title="Clique aqui para excluir!!!">&nbsp;</a>
+                <a href="excluirEmpresa?empresa.id=<s:property value="empresa.id"/>&empresa.endereco.id=<s:property value="empresa.endereco.id"/>&empresa.contato.id=<s:property value="empresa.contato.id"/>" class="glyphicon glyphicon-trash" title="Clique aqui para excluir!!!">&nbsp;</a>
          
             </div>
         </div>

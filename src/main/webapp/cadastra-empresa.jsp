@@ -55,7 +55,7 @@
                     <label for="" class="col-sm-2 control-label">CEP</label>
                     <div class="col-sm-2">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="" data-mask="99999-999" name="endereco.cep">
+                            <input type="text" class="form-control" placeholder="" data-mask="99999-999" name="empresa.endereco.cep">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <span class="glyphicon glyphicon-search"></span>
@@ -68,31 +68,35 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="">Endereço</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="" name="endereco.logradouro" placeholder="">
+                        <input type="text" class="form-control" id="" name="empresa.endereco.logradouro" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="">Bairro</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="" name="endereco.bairro" placeholder="">
+                        <input type="text" class="form-control" id="" name="empresa.endereco.bairro" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="">Cidade</label>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="" name="endereco.cidade" placeholder="">
+                        <input type="text" class="form-control" id="" name="empresa.endereco.cidade" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="">Estado</label>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control" id="" name="endereco.estado" placeholder="">
+                    <div class="col-sm-2">
+                        <select name="empresa.endereco.estado" id="" class="form-control">
+                            <option>&nbsp;</option>
+                            <option>AL</option>
+                            <option>SP</option>
+                            <option>RJ</option>
+                        </select>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -104,28 +108,28 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="">Telefone Fixo</label>
                     <div class="col-sm-2">
-                        <input type="text" class="form-control" id="" name="contato.residencial" placeholder="" data-mask="99 9999-9999">
+                        <input type="text" class="form-control" id="" name="empresa.contato.residencial" placeholder="" data-mask="99 9999-9999">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="">Telefone Celular</label>
                     <div class="col-sm-2">
-                        <input type="text" class="form-control" id="" name="contato.movel" placeholder="" data-mask="99 99999-9999">
+                        <input type="text" class="form-control" id="" name="empresa.contato.movel" placeholder="" data-mask="99 99999-9999">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="">E-mail</label>
                     <div class="col-sm-6">
-                        <input type="email" class="form-control" id="" name="contato.email" placeholder="">
+                        <input type="email" class="form-control" id="" name="empresa.contato.email" placeholder="">
                     </div>
                 </div>                    
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="">Site</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="" name="contato.site" placeholder="">
+                        <input type="text" class="form-control" id="" name="empresa.contato.site" placeholder="">
                     </div>
                 </div>
 

@@ -1,7 +1,8 @@
 package com.mycompany.action;
 
-import com.mycompany.dao.UsuarioDao;
-import com.mycompany.entities.Usuario;
+import com.mycompany.dao.PessoaDao;
+import com.mycompany.entities.Pessoa;
+import static com.opensymphony.xwork2.Action.SUCCESS;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 
@@ -9,40 +10,35 @@ import org.apache.struts2.convention.annotation.Result;
  *
  * @author Administrador
  */
+
 public class UsuarioAction {
 
-    private Usuario user = new Usuario();
+    private Pessoa pessoa = new Pessoa();
     private String message;
 
-    @Action(value = "addUser", results
-//           = @Result(name = "success", type = "redirectAction", params = {"actionName", "cadUser"}))
-             = @Result(name = "success", location = "/cadastra-usuario.jsp"))
-    public String addUser() {
-        UsuarioDao dao = new UsuarioDao();
-        dao.salvar(user);
+    // Método cadastra pessoa
+    @Action(value = "cadpes", results
+            = @Result(name = SUCCESS, location = "/cadastra-usuario.jsp"))
+    public String cadpes() {
+        PessoaDao dao = new PessoaDao();
+        dao.salvar(pessoa);
         message = "Cadastrado realizado com sucesso!";
-        return "success";
+        return SUCCESS;
     }
 
-    @Action(value = "cadUser", results
-            = @Result(name = "success", location = "/cadastra-usuario.jsp"))
-    public String cadUser() {
-        return "success";
-    }
-
-    public Usuario getUser() {
-        return user;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public void setUser(Usuario user) {
-        this.user = user;
-    }
-
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 }

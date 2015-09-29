@@ -1,9 +1,9 @@
 package com.mycompany.action;
 
 import com.mycompany.dao.EmpresaDao;
-import com.mycompany.entities.Contato;
 import com.mycompany.entities.Empresa;
-import com.mycompany.entities.Endereco;
+import static com.opensymphony.xwork2.Action.ERROR;
+import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionContext;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,26 +20,22 @@ public class EmpresaAction {
 
     private String message;
     private Empresa empresa = new Empresa();
-    private Contato contato = new Contato();
-    private Endereco endereco = new Endereco();
     private List<Empresa> listaempresas = new ArrayList<>();
 
-// Método cadastra Empresa
+    // Método cadastra Empresa
     @Action(value = "cademp", results
-            = @Result(name = "success", location = "/cadastra-empresa.jsp"))
+            = @Result(name = SUCCESS, location = "/cadastra-empresa.jsp"))
     public String cademp() {
         EmpresaDao dao = new EmpresaDao();
-        empresa.setContato(contato);
-        empresa.setEndereco(endereco);
         dao.salvar(empresa);
         message = "Empresa cadastrada com sucesso!";
-        return "success";
+        return SUCCESS;
     }
 
     // Método Lista Empresas 
     @Action(value = "lisemp", results = {
-        @Result(name = "success", location = "/lista-empresa.jsp"),
-        @Result(name = "error", location = "/lista-empresa.jsp")
+        @Result(name = SUCCESS, location = "/lista-empresa.jsp"),
+        @Result(name = ERROR, location = "/lista-empresa.jsp")
     })
     public String lisemp() {
         try {
@@ -47,55 +43,56 @@ public class EmpresaAction {
             listaempresas = dao.listar();
             if (listaempresas.isEmpty()) {
                 setMessage("Nenhum registro encontado!");
-                return "success";
+                return SUCCESS;
             }
-            return "success";
+            return SUCCESS;
         } catch (Exception e) {
             setMessage("Error: " + e.getMessage() + ".");
-            return "success";
+            return SUCCESS;
         }
     }
-    
+
     // Método detalhes empresa
     @Action(value = "detemp", results
-            = @Result(name = "success", location = "/detalhes-empresa.jsp")
+            = @Result(name = SUCCESS, location = "/detalhes-empresa.jsp")
     )
     public String detemp() {
         EmpresaDao dao = new EmpresaDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
         int id = Integer.parseInt(request.getParameter("id"));
         empresa = dao.selecionar(id);
-        return "success";
+        return SUCCESS;
     }
 
-    @Action(value = "selecionaEmpresa", results
-            = @Result(name = "success", location = "/edita-empresa.jsp")
+    // Método selecionar empresa
+    @Action(value = "selemp", results
+            = @Result(name = SUCCESS, location = "/edita-empresa.jsp")
     )
-    public String selecionaEmpresa() {
+    public String selemp() {
         EmpresaDao dao = new EmpresaDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
         empresa = dao.selecionar(Integer.parseInt(request.getParameter("id")));
-        return "success";
+        return SUCCESS;
     }
 
-    @Action(value = "atualizaEmpresa", results
-            = @Result(name = "success", type = "redirectAction", params = {"actionName", "lisemp"})
+    // Método atualiza empresa
+    @Action(value = "atuemp", results
+            = @Result(name = SUCCESS, type = "redirectAction", params = {"actionName", "lisemp"})
     )
-    public String atualizaEmpresa() {
-        return "success";
+    public String atuemp() {
+        return SUCCESS;
     }
 
-    @Action(value = "excluirEmpresa", results = {
-        @Result(name = "success", type = "redirectAction", params = {"actionName", "lisemp"}),
-        @Result(name = "error", location = "/Home.jsp")
+    // Método excluir empresa
+    @Action(value = "excemp", results = {
+        @Result(name = SUCCESS, type = "redirectAction", params = {"actionName", "lisemp"}),
+        @Result(name = ERROR, location = "/Home.jsp")
     })
-    public String excluirEmpresa() {
+    public String excemp() {
         EmpresaDao dao = new EmpresaDao();
-        empresa.setEndereco(endereco);
-        empresa.setContato(contato);
         dao.remover(empresa);
         setMessage("Empresa removida com sucesso!!!");
-        return "success";
+        return SUCCESS;
     }
 
     // Getter
@@ -105,14 +102,6 @@ public class EmpresaAction {
 
     public Empresa getEmpresa() {
         return empresa;
-    }
-
-    public Contato getContato() {
-        return contato;
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
     }
 
     public List<Empresa> getListaempresas() {
@@ -126,14 +115,6 @@ public class EmpresaAction {
 
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
-    }
-
-    public void setContato(Contato contato) {
-        this.contato = contato;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
     }
 
     public void setListaempresas(List<Empresa> listaempresas) {
