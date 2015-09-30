@@ -20,6 +20,12 @@ public class Usuario implements Serializable {
     private int id;
     private String usuario, senha, nivel;
 
+    public enum nivel {
+        ADMIN,
+        USER,
+        TEC;
+    }
+
     // Getters
     public int getId() {
         return id;
@@ -36,7 +42,7 @@ public class Usuario implements Serializable {
     public String getNivel() {
         return nivel;
     }
-    
+
     // Setters
     public void setId(int id) {
         this.id = id;

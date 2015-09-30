@@ -2,6 +2,8 @@ package com.mycompany.action;
 
 import com.mycompany.dao.OficinaDao;
 import com.mycompany.entities.Oficina;
+import static com.opensymphony.xwork2.Action.ERROR;
+import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionContext;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -20,113 +22,84 @@ public class OficinaAction {
     private Oficina oficina = new Oficina();
     private List<Oficina> listaoficinas = new ArrayList<>();
     private String message;
-    private OficinaDao dao;
 
-    @Action(value = "addOficina", results
-            = @Result(name = "success", location = "/cadastra-oficina.jsp"))
+    @Action(value = "addOficina", results = @Result(name = SUCCESS, location = "/cadastra-oficina.jsp"))
     public String addOficina() {
-        dao = new OficinaDao();
-        this.dao.salvar(oficina);
+        OficinaDao dao = new OficinaDao();
+        dao.salvar(oficina);
         message = "Oficina cadastrada com sucesso!";
-        return "success";
+        return SUCCESS;
     }
 
-    @Action(value = "listaOficinas", results = {
-        @Result(name = "success", location = "/lista-oficina.jsp"),
-        @Result(name = "error", location = "/lista-oficina.jsp")
-    })
+    @Action(value = "listaOficinas", results = @Result(name = SUCCESS, location = "/lista-oficina.jsp"))
     public String listaOficinas() {
-        dao = new OficinaDao();
-        listaoficinas = this.dao.listar();
+        OficinaDao dao = new OficinaDao();
+        listaoficinas = dao.listar();
         if (listaoficinas.isEmpty()) {
             setMessage("Nenhum registro encontado!");
-            return "success";
+            return SUCCESS;
         } else {
-            return "success";
+            return SUCCESS;
         }
     }
 
-    @Action(value = "listaOficinasAjax", results = {
-        @Result(name = "success", location = "/lista-oficina-ajax.jsp"),
-        @Result(name = "error", location = "/lista-oficina-ajax.jsp")
-    })
+    @Action(value = "listaOficinasAjax", results = @Result(name = SUCCESS, location = "/lista-oficina-ajax.jsp"))
     public String listaOficinasAjax() {
-        dao = new OficinaDao();
-        listaoficinas = this.dao.listar();
-        if (listaoficinas.isEmpty()) {
-            setMessage("Nenhum registro encontado!");
-            return "success";
-        }
-        return "success";
+        listaOficinas();
+        return SUCCESS;
     }
 
-    @Action(value = "detalhesOficina", results = {
-        @Result(name = "success", location = "/detalhes-oficina.jsp"),
-        @Result(name = "error", location = "/Home.jsp")
-    })
+    @Action(value = "menuOficina", results = @Result(name = SUCCESS, location = "/ajax/menu-oficina.jsp"))
+    public String menuOficina() {
+        listaOficinas();
+        return SUCCESS;
+    }
+
+    @Action(value = "detalhesOficina", results = @Result(name = SUCCESS, location = "/detalhes-oficina.jsp"))
     public String detalhesOficina() {
-        dao = new OficinaDao();
-        HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
-        oficina = this.dao.selecionar(Integer.parseInt(request.getParameter("id")));
-        return "success";
+        selecionaOficina();
+        return SUCCESS;
     }
 
-    @Action(value = "selecionaOficina", results
-            = @Result(name = "success", location = "/edita-oficina.jsp"))
+    @Action(value = "selecionaOficina", results = @Result(name = SUCCESS, location = "/edita-oficina.jsp"))
     public String selecionaOficina() {
-        dao = new OficinaDao();
+        OficinaDao dao = new OficinaDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
-        oficina = this.dao.selecionar(Integer.parseInt(request.getParameter("id")));
-        return "success";
+        oficina = dao.selecionar(Integer.parseInt(request.getParameter("id")));
+        return SUCCESS;
     }
 
     @Action(value = "excluirOficina", results = {
-        @Result(name = "success", type = "redirectAction", params = {"actionName", "listaOficinas"}),
-        @Result(name = "error", location = "/Home.jsp")
+        @Result(name = SUCCESS, type = "redirectAction", params = {"actionName", "listaOficinas"}),
+        @Result(name = ERROR, location = "/Home.jsp")
     })
     public String excluirOficina() {
-        dao = new OficinaDao();
-        this.dao.remover(oficina);
+        OficinaDao dao = new OficinaDao();
+        dao.remover(oficina);
         setMessage("Oficina removida com sucesso!!!");
-        return "success";
+        return SUCCESS;
     }
 
     @Action(value = "pesquisarOficina", results = {
-        @Result(name = "success", location = "/lista-oficina-ajax-result.jsp"),
-        @Result(name = "error", location = "/lista-oficina-ajax-result.jsp")
+        @Result(name = SUCCESS, location = "/lista-oficina-ajax-result.jsp"),
+        @Result(name = ERROR, location = "/lista-oficina-ajax-result.jsp")
     })
     public String pesquisarOficina() throws UnsupportedEncodingException {
-        dao = new OficinaDao();
-        listaoficinas = this.dao.pesquisar(oficina.getDescricao());
+        OficinaDao dao = new OficinaDao();
+        listaoficinas = dao.pesquisar(oficina.getDescricao());
         if (listaoficinas.isEmpty()) {
             setMessage("Nenhum registro encontado!");
-            return "success";
+            return ERROR;
         } else {
-            return "error";
+            return SUCCESS  ;
         }
     }
 
-    @Action(value = "atualizaOficina", results
-            = @Result(name = "success", type = "redirectAction", params = {"actionName", "listaOficinas"}))
+    @Action(value = "atualizaOficina", results = @Result(name = SUCCESS, type = "redirectAction", params = {"actionName", "listaOficinas"}))
     public String atualizaOficina() {
-        dao = new OficinaDao();
-        this.dao.atualizar(oficina);
-        return "success";
-    }
-
-    @Action(value = "listaOficinasDropdown", results = {
-        @Result(name = "success", location = "/cadastra-ocorrencia.jsp"),
-        @Result(name = "error", location = "/cadastra-ocorrencia.jsp")
-    })
-    public String listaOficinasDropdown() {
-        dao = new OficinaDao();
-        listaoficinas = this.dao.listar();
-        if (listaoficinas.isEmpty()) {
-            setMessage("Nenhum registro de Oficina encontado, para continuar por favor efetuar o cadastro!");
-            return "success";
-        } else {
-            return "error";
-        }
+        OficinaDao dao = new OficinaDao();
+        dao.atualizar(oficina);
+        return SUCCESS;
     }
 
     // Getters

@@ -68,7 +68,7 @@ public class CarroAction {
 
     // Método listar marca
     @Action(value = "lismar", results = {
-        @Result(name = SUCCESS, location = "/lista-marca-ajax-result.jsp"),
+        @Result(name = SUCCESS, location = "/ajax/lista-marca.jsp"),
         @Result(name = ERROR, location = "/erro.jsp")
     })
     public String lismar() {

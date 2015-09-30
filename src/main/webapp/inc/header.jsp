@@ -41,7 +41,7 @@
                                 <li><a href="cadastra-usuario.jsp">Usuário</a></li>
                                 <li><a href="cadastra-empresa.jsp">Empresa</a></li>
                                 <li><a href="cadastra-oficina.jsp">Oficina</a></li>
-                                <li><a href="listaOficinasDropdown.action">Ocorrência</a></li>
+                                <li><a href="cadastra-ocorrencia.jsp">Ocorrência</a></li>
                                 <li><a href="cadastra-setor.jsp">Setor</a></li>
                             </ul>
                         </li>

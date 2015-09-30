@@ -12,32 +12,25 @@
             </div>
             <div class="panel-body">
 
-                    <div class="form-group">
-                        <label for="" class="col-sm-2 control-label">Oficina</label>
-                        <div class="col-sm-2">
-                            <s:select cssClass="form-control" 
-                                      headerKey="-1" 
-                                      headerValue="Selecione..."
-                                      list="listaoficinas" 
-                                      listKey="id"
-                                      name="oficina.id" 
-                                      value="%{listaoficinas.oficina.{id}}"
-                            />
-                        </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">Oficina</label>
+                    <div class="col-sm-2" id="menu-oficina">
+                       
                     </div>
-                    <div class="form-group">
-                        <label for="" class="col-sm-2 control-label">Nome</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="nome" name="ocorrencia.nome" placeholder="Nome..." >
-                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">Nome</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="nome" name="ocorrencia.nome" placeholder="Nome..." >
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="" class="col-sm-2 control-label">Descrição</label>
-                        <div class="col-sm-8">
-                            <textarea class="form-control" rows="3" name="ocorrencia.descricao" placeholder="Descrição..."></textarea>
-                        </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">Descrição</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" rows="3" name="ocorrencia.descricao" placeholder="Descrição..."></textarea>
                     </div>
+                </div>
 
             </div>
         </div>
@@ -50,6 +43,12 @@
     </form>
 </section>
 
-
-
 <jsp:include page="inc/footer.html"/>
+<script>
+    $(window).load(function() {
+        $.get("menuOficina",
+                function(result) {
+                    $('#menu-oficina').html(result);
+                });
+    });
+</script>
