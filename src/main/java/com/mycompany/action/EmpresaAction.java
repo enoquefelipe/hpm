@@ -18,13 +18,12 @@ import org.apache.struts2.convention.annotation.Result;
  */
 public class EmpresaAction {
 
-    private String message;
     private Empresa empresa = new Empresa();
     private List<Empresa> listaempresas = new ArrayList<>();
+    private String message;
 
     // Método cadastra Empresa
-    @Action(value = "cademp", results
-            = @Result(name = SUCCESS, location = "/cadastra-empresa.jsp"))
+    @Action(value = "cademp", results = @Result(name = SUCCESS, location = "/cadastra-empresa.jsp"))
     public String cademp() {
         EmpresaDao dao = new EmpresaDao();
         dao.salvar(empresa);
@@ -53,9 +52,7 @@ public class EmpresaAction {
     }
 
     // Método detalhes empresa
-    @Action(value = "detemp", results
-            = @Result(name = SUCCESS, location = "/detalhes-empresa.jsp")
-    )
+    @Action(value = "detemp", results = @Result(name = SUCCESS, location = "/detalhes-empresa.jsp"))
     public String detemp() {
         EmpresaDao dao = new EmpresaDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
@@ -65,9 +62,7 @@ public class EmpresaAction {
     }
 
     // Método selecionar empresa
-    @Action(value = "selemp", results
-            = @Result(name = SUCCESS, location = "/edita-empresa.jsp")
-    )
+    @Action(value = "selemp", results = @Result(name = SUCCESS, location = "/edita-empresa.jsp"))
     public String selemp() {
         EmpresaDao dao = new EmpresaDao();
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
@@ -76,9 +71,7 @@ public class EmpresaAction {
     }
 
     // Método atualiza empresa
-    @Action(value = "atuemp", results
-            = @Result(name = SUCCESS, type = "redirectAction", params = {"actionName", "lisemp"})
-    )
+    @Action(value = "atuemp", results = @Result(name = SUCCESS, type = "redirectAction", params = {"actionName", "lisemp"}))
     public String atuemp() {
         return SUCCESS;
     }
@@ -95,7 +88,7 @@ public class EmpresaAction {
         return SUCCESS;
     }
 
-    // Getter
+    // Getters
     public String getMessage() {
         return message;
     }
@@ -108,7 +101,7 @@ public class EmpresaAction {
         return listaempresas;
     }
 
-    // Setter
+    // Setters
     public void setMessage(String message) {
         this.message = message;
     }

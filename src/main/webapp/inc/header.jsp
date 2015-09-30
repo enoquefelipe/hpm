@@ -43,6 +43,7 @@
                                 <li><a href="cadastra-oficina.jsp">Oficina</a></li>
                                 <li><a href="cadastra-ocorrencia.jsp">Ocorrência</a></li>
                                 <li><a href="cadastra-setor.jsp">Setor</a></li>
+                                <li><a href="cadastra-departamento.jsp">Departamento</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -68,4 +69,4 @@
                 </div>
             </div>
         </nav>
-<div class="container">
+        <div class="container">

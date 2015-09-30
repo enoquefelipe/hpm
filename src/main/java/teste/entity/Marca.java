@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "hpm_marcas")
+@Table(name = "teste_marcas")
 public class Marca implements Serializable {
 
     @Id
