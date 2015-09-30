@@ -10,53 +10,68 @@
 
         <div id="accordion">
             <h3>Dados Pessoais</h3>
-            <div>
+            <div class="form-horizontal">
                 <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input type="text" class="form-control" id="name" name="pessoa.nome" placeholder="Nome...">
+                    <label for="name" class="col-sm-2 control-label">Nome</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="name" name="pessoa.nome" placeholder="Nome...">
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="rg">RG</label>
-                    <input type="text" class="form-control" id="rg" name="pessoa.rg" placeholder="RG...">
+                    <label for="rg" class="col-sm-2 control-label">RG</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="rg" name="pessoa.rg" placeholder="RG...">
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="cpf">CPF</label>
-                    <input type="text" class="form-control" id="cpf" name="pessoa.cpf" placeholder="CPF..." data-mask="999.999.999-99">
+                    <label for="cpf" class="col-sm-2 control-label">CPF</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="cpf" name="pessoa.cpf" placeholder="CPF..." data-mask="999.999.999-99">
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="datepicker">Data de Nascimento</label>
-                    <input type="text" class="form-control" id="datepicker" name="data" placeholder="Data de Nascimento...">
+                    <label for="datepicker" class="col-sm-2 control-label">Data de Nascimento</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="datepicker" name="data" placeholder="Data de Nascimento..." data-mask="99-99-9999">
+                    </div>
                 </div>
             </div>
             <h3>Dados de Contato</h3>
-            <div>
+            <div class="form-horizontal">
+
                 <div class="form-group">
-                    <label for="">Telefone Fixo</label>
-                    <input type="text" class="form-control" id="" name="pessoa.contato.residencial" placeholder="" data-mask="99 9999-9999">
+                    <label class="col-sm-2 control-label" for="">Telefone Fixo</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="" name="pessoa.contato.residencial" placeholder="" data-mask="99 9999-9999">
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="">Telefone Celular</label>
-                    <input type="text" class="form-control" id="" name="pessoa.contato.movel" placeholder="" data-mask="99 99999-9999">
+                    <label class="col-sm-2 control-label" for="">Telefone Celular</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="" name="pessoa.contato.movel" placeholder="" data-mask="99 99999-9999">
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="">E-mail</label>
-                    <input type="email" class="form-control" id="" name="pessoa.contato.email" placeholder="">
-                </div>
+                    <label class="col-sm-2 control-label" for="">E-mail</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="" name="pessoa.contato.email" placeholder="">
+                    </div>
+                </div>                    
 
                 <div class="form-group">
-                    <label for="">Site</label>
-                    <input type="text" class="form-control" id="" name="pessoa.contato.site" placeholder="">
+                    <label class="col-sm-2 control-label" for="">Site</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="" name="pessoa.contato.site" placeholder="">
+                    </div>
                 </div>
             </div>
 
             <h3>Dados de Localização</h3>
-            <!-- -->
-
             <div class="form-horizontal"> 
                 <div class="form-group">
                     <label for="" class="col-sm-2 control-label">CEP</label>
@@ -98,28 +113,31 @@
                     </div>
                 </div>
             </div>
-            <!--   -->
-
 
             <h3>Dados de Acesso</h3>
-            <div>
+            <div class="form-horizontal">
                 <div class="form-group">
-                    <label for="username">Usuario</label>
-                    <input type="text" class="form-control" id="username" name="pessoa.usuario.usuario"placeholder="Usuario..." title="Digite aqui os dado de login!!">
+                    <label for="username" class="col-sm-2 control-label">Usuario</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="username" name="pessoa.usuario.usuario"placeholder="Usuario..." title="Digite aqui os dado de login!!">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="password">Senha</label>
-                    <input type="password" class="form-control" id="password" name="pessoa.usuario.senha" placeholder="Senha..." title="Digite aqui os de senha!!">
+                    <label for="password" class="col-sm-2 control-label">Senha</label>
+                    <div class="col-sm-3">
+                        <input type="password" class="form-control" id="password" name="pessoa.usuario.senha" placeholder="Senha..." title="Digite aqui os de senha!!">
+                    </div>
                 </div>
 
-
                 <div class="form-group">
-                    <label for="">Nível de Acesso</label>
-                    <select class="form-control" name="pessoa.usuario.nivel" title="Escolha o nível de acesso para o usuário!!!">
-                        <option>Administrador</option>
-                        <option>Técnico</option>
-                        <option>Usuário</option>
-                    </select>
+                    <label for="" class="col-sm-2 control-label">Nível de Acesso</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" name="pessoa.usuario.nivel" title="Escolha o nível de acesso para o usuário!!!">
+                            <option>Administrador</option>
+                            <option>Técnico</option>
+                            <option>Usuário</option>
+                        </select>
+                    </div>
                 </div>
 
             </div>

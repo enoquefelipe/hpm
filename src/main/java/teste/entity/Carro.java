@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -22,11 +21,13 @@ public class Carro implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String modelo;
-    private double preco;
+    private float preco;
 
-    @OneToOne(cascade = CascadeType.ALL)// ,optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
-//  @JoinColumn(name = "marca_id", nullable = true)
+    @OneToOne(cascade = CascadeType.REFRESH)
     private Marca marca;
+//    @OneToOne(cascade = CascadeType.ALL)// ,optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
+////  @JoinColumn(name = "marca_id", nullable = true)
+//    private Marca marca;
 
     @Override
     public int hashCode() {
@@ -66,11 +67,11 @@ public class Carro implements Serializable {
         this.modelo = modelo;
     }
 
-    public double getPreco() {
+    public float getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(float preco) {
         this.preco = preco;
     }
 
@@ -81,12 +82,4 @@ public class Carro implements Serializable {
     public void setMarca(Marca marca) {
         this.marca = marca;
     }
-
-//    public List<Marca> getMarcas() {
-//        return marcas;
-//    }
-//
-//    public void setMarcas(List<Marca> marcas) {
-//        this.marcas = marcas;
-//    }
 }

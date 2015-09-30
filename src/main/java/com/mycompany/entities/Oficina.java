@@ -25,7 +25,6 @@ public class Oficina implements Serializable {
         return nome;
     }
 
-    
     // Getters
     public int getId() {
         return id;

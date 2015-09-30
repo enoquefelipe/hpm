@@ -16,7 +16,7 @@
 
         <div class="container">
             <h1 id="titulo-principal">Cadastra Carro</h1>
-            <form method="POST" action="cadcar">
+            <form method="POST" action="cadmar">
                 <div class="form-group">
                     <label>Nome:</label>
                     <input type="text" name="marca.nome" class="form-control"/>

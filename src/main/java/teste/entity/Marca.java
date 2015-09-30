@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,10 +15,6 @@ public class Marca implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nome;
-
-//    @OneToMany //(mappedBy = "marca")
-//    @JoinColumn(name = "carro_id")
-//    private Carro carro;
 
     @Override
     public int hashCode() {
@@ -41,6 +35,11 @@ public class Marca implements Serializable {
         return this.id == other.id;
     }
 
+    @Override
+    public String toString() {
+        return nome;
+    }
+
     public int getId() {
         return id;
     }
@@ -56,12 +55,4 @@ public class Marca implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-//    public Carro getCarro() {
-//        return carro;
-//    }
-//
-//    public void setCarro(Carro carro) {
-//        this.carro = carro;
-//    }
 }
