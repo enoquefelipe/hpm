@@ -3,6 +3,8 @@ package com.mycompany.action;
 import com.mycompany.dao.DepartamentoDao;
 import com.mycompany.entities.Departamento;
 import static com.opensymphony.xwork2.Action.SUCCESS;
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 
@@ -13,6 +15,7 @@ import org.apache.struts2.convention.annotation.Result;
 public class DepartamentoAction {
 
     private Departamento departamento = new Departamento();
+    private List<Departamento> listadepartamentos = new ArrayList<>();
     private String message;
 
     // Método cadastra empresa
@@ -39,11 +42,16 @@ public class DepartamentoAction {
     // Getters
     public Departamento getDepartamento() {
         return departamento;
-    }   
+    }
 
     public String getMessage() {
         return message;
     }
+
+    public List<Departamento> getListadepartamentos() {
+        return listadepartamentos;
+    }
+
     // Setters
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
@@ -51,5 +59,9 @@ public class DepartamentoAction {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public void setListadepartamentos(List<Departamento> listadepartamentos) {
+        this.listadepartamentos = listadepartamentos;
     }
 }

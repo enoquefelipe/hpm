@@ -1,4 +1,5 @@
 <%@taglib uri="/struts-tags" prefix="s"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="inc/header.jsp"/>
 <section>
     <div class="alert alert-success" role="alert" id="message-sucesso"><s:property value="message" /></div>
@@ -14,8 +15,8 @@
 
                 <div class="form-group">
                     <label for="empresa" class="col-sm-2 control-label">Empresa</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="empresa" name="departamento.empresa.id" placeholder="Empresa" required="">
+                    <div class="col-sm-6" id="menu-empresa">
+
                     </div>
                 </div>
                 <div class="form-group">
@@ -26,9 +27,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="descricao" class="col-sm-2 control-label">Descrição</label>
+                    <label for="descricao" class="col-sm-2 control-label">DescriÃ§Ã£o</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control" id="descricao" rows="3" name="departamento.descricao" placeholder="Descrição..."></textarea>
+                        <textarea class="form-control" id="descricao" rows="3" name="departamento.descricao" placeholder="DescriÃ§Ã£o..."></textarea>
                     </div>
                 </div>
 
@@ -52,3 +53,11 @@
     </form>
 </section>
 <jsp:include page="inc/footer.html"/>
+<script>
+    $(window).load(function() {
+        $.get("menuEmpresa",
+                function(result) {
+                    $('#menu-empresa').html(result);
+                });
+    });
+</script>

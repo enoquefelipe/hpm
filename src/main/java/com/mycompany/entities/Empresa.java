@@ -22,14 +22,11 @@ public class Empresa implements Serializable {
     private int id;
     private String razao_social, nome_fantasia, inscricao_estadual, cnpj;
 
-//    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, optional = true)
-//    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToOne(cascade = CascadeType.ALL, optional = true)
     private Contato contato;
 
-//    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, optional = true)
     @OneToOne(cascade = CascadeType.ALL, optional = true)
-//    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+
     private Endereco endereco;
 
     @Override
@@ -52,6 +49,11 @@ public class Empresa implements Serializable {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return nome_fantasia;
     }
 
     // Getters

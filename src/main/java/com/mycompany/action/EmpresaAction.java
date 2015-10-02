@@ -51,6 +51,20 @@ public class EmpresaAction {
         }
     }
 
+    @Action(value = "menuEmpresa", results = {
+        @Result(name = SUCCESS, location = "/ajax/menu-empresa.jsp"),
+        @Result(name = ERROR, location = "/ajax/menu-empresa.jsp")
+
+    })
+    public String menuEmpresa() {
+        lisemp();
+        if (listaempresas.isEmpty()) {
+            setMessage("Nenhuma empresa cadastrada.");
+            return ERROR;
+        }
+        return SUCCESS;
+    }
+
     // Método detalhes empresa
     @Action(value = "detemp", results = @Result(name = SUCCESS, location = "/detalhes-empresa.jsp"))
     public String detemp() {

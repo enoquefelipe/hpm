@@ -108,11 +108,7 @@
                     <span class="glyphicon glyphicon-pencil" title="Clique aqui para editar!!!">&nbsp;</span>
                 </s:a>
 
-                <s:url id="deleteURL" action="excemp">
-                    <s:param name="empresa.id" value="%{empresa.id}"></s:param>
-                </s:url>
-
-                <a href="excluirEmpresa?empresa.id=<s:property value="empresa.id"/>&empresa.endereco.id=<s:property value="empresa.endereco.id"/>&empresa.contato.id=<s:property value="empresa.contato.id"/>" class="glyphicon glyphicon-trash" title="Clique aqui para excluir!!!">&nbsp;</a>
+                <a href="excemp?empresa.id=<s:property value="empresa.id"/>&empresa.endereco.id=<s:property value="empresa.endereco.id"/>&empresa.contato.id=<s:property value="empresa.contato.id"/>" class="glyphicon glyphicon-trash" title="Clique aqui para excluir!!!">&nbsp;</a>
          
             </div>
         </div>
