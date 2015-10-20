@@ -1,6 +1,7 @@
 package teste.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,13 +22,10 @@ public class Carro implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String modelo;
-    private float preco;
+    private BigDecimal preco;
 
     @OneToOne(cascade = CascadeType.REFRESH)
     private Marca marca;
-//    @OneToOne(cascade = CascadeType.ALL)// ,optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
-////  @JoinColumn(name = "marca_id", nullable = true)
-//    private Marca marca;
 
     @Override
     public int hashCode() {
@@ -67,11 +65,11 @@ public class Carro implements Serializable {
         this.modelo = modelo;
     }
 
-    public float getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(float preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
