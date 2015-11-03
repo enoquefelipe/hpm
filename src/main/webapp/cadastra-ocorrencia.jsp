@@ -5,7 +5,7 @@
 
     <h4 class="tittle-page">Cadastro de Ocorrência</h4>
 
-    <form class="form-horizontal" action="addOcorrencia" method="POST">
+    <form class="form-horizontal" action="cadoco" method="POST">
         <div class="panel panel-default">
             <div class="panel-heading">     
                 <h3 class="panel-title">Dados da Ocorrência</h3>

@@ -38,12 +38,11 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Cadastros<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="cadastra-chamado.jsp">Chamado</a></li>
-                                <li><a href="cadastra-usuario.jsp">Usuário</a></li>
-                                <li><a href="cadastra-empresa.jsp">Empresa</a></li>
-                                <li><a href="cadastra-oficina.jsp">Oficina</a></li>
                                 <li><a href="cadastra-ocorrencia.jsp">Ocorrência</a></li>
+                                <li><a href="cadastra-oficina.jsp">Oficina</a></li>
+                                <li><a href="cadastra-empresa.jsp">Empresa</a></li>
                                 <li><a href="cadastra-setor.jsp">Setor</a></li>
-                                <li><a href="cadastra-departamento.jsp">Departamento</a></li>
+                                <li><a href="cadastra-usuario.jsp">Usuário</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

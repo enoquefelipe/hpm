@@ -14,9 +14,8 @@
             <div class="panel-body">
 
                 <div class="form-group">
-                    <label for="empresa" class="col-sm-2 control-label">Empresa</label>
-                    <div class="col-sm-6" id="menu-empresa">
-
+                    <label for="menu-setor" class="col-sm-2 control-label">Setor</label>
+                    <div class="col-sm-6" id="menu-setor">
                     </div>
                 </div>
                 <div class="form-group">
@@ -55,9 +54,9 @@
 <jsp:include page="inc/footer.html"/>
 <script>
     $(window).load(function() {
-        $.get("menuEmpresa",
+        $.get("menuSetor",
                 function(result) {
-                    $('#menu-empresa').html(result);
+                    $('#menu-setor').html(result);
                 });
     });
 </script>

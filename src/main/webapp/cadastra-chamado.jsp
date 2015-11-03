@@ -30,8 +30,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <select class="form-control" name="ticket.departamento" title="Selecione o departamento!!">
-                            <option>Departamento...</option>
-                            <option>Internação</option>
+                            <option>Departamento Solicitante...</option>
+                            <option>Internação</option> 
                             <option>Pronto Atendimento</option>
                             <option>Medicina Fetal</option>
                         </select>
@@ -39,7 +39,7 @@
 
                     <div class="col-md-6">
                         <select class="form-control" name="ticket.tipo" title="Selecione o tipo do ocorrencia!!">
-                            <option>Tipo...        </option>
+                            <option>Tipo da solicitação...</option>
                             <option>Infraestrutura</option>
                             <option>Sistemas</option>
                             <option>Telefonia</option>

@@ -23,7 +23,7 @@ public class Departamento implements Serializable {
     private String nome, descricao, status;
     
     @OneToOne(cascade = CascadeType.REFRESH)
-    private Empresa empresa;
+    private Setor setor;
 
     // Getters
     public int getId() {
@@ -34,8 +34,8 @@ public class Departamento implements Serializable {
         return nome;
     }
 
-    public Empresa getEmpresa() {
-        return empresa;
+    public Setor getSetor() {
+        return setor;
     }
 
     public String getDescricao() {
@@ -55,8 +55,8 @@ public class Departamento implements Serializable {
         this.nome = nome;
     }
 
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
+    public void setSetor(Setor setor) {
+        this.setor = setor;
     }
 
     public void setDescricao(String descricao) {
