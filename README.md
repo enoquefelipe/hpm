@@ -3,5 +3,5 @@ Maven Application
 
 Introduction
 ------------
-This is a simple, JavaEE application using the Struts2 MVC layer and module
+This is a simple, JavaEE application using the Struts 2 MVC layer and module
 systems. 
